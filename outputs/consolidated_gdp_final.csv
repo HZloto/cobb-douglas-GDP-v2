@@ -1,25 +1,25 @@
 year,region,sector,gdp,step,row_type
-2020,ALL REGIONS,A,6539928904412.476,final_consolidated,sector_total
-2020,ALL REGIONS,ALL SECTORS,13701322239219.104,final_consolidated,grand_total
-2020,ALL REGIONS,B,4421128886962.807,final_consolidated,sector_total
-2020,ALL REGIONS,C,2740264447843.8213,final_consolidated,sector_total
-2020,Makkah Region,A,2796589936773.687,final_consolidated,detail
-2020,Makkah Region,ALL SECTORS,6214644303941.526,final_consolidated,region_total
-2020,Makkah Region,B,2175125506379.5342,final_consolidated,detail
-2020,Makkah Region,C,1242928860788.3054,final_consolidated,detail
-2020,Riyadh Region,A,3743338967638.7886,final_consolidated,detail
-2020,Riyadh Region,ALL SECTORS,7486677935277.577,final_consolidated,region_total
-2020,Riyadh Region,B,2246003380583.273,final_consolidated,detail
-2020,Riyadh Region,C,1497335587055.5156,final_consolidated,detail
-2021,ALL REGIONS,A,7302999011550.625,final_consolidated,sector_total
-2021,ALL REGIONS,ALL SECTORS,14675971677603.627,final_consolidated,grand_total
-2021,ALL REGIONS,B,4437778330532.277,final_consolidated,sector_total
-2021,ALL REGIONS,C,2935194335520.7256,final_consolidated,sector_total
-2021,Makkah Region,A,3087958851550.6553,final_consolidated,detail
-2021,Makkah Region,ALL SECTORS,6570125216065.225,final_consolidated,region_total
-2021,Makkah Region,B,2168141321301.5242,final_consolidated,detail
-2021,Makkah Region,C,1314025043213.045,final_consolidated,detail
-2021,Riyadh Region,A,4215040159999.969,final_consolidated,detail
-2021,Riyadh Region,ALL SECTORS,8105846461538.402,final_consolidated,region_total
-2021,Riyadh Region,B,2269637009230.753,final_consolidated,detail
-2021,Riyadh Region,C,1621169292307.6807,final_consolidated,detail
+2020,ALL REGIONS,A,7058035082240.129,final_consolidated,sector_total
+2020,ALL REGIONS,ALL SECTORS,15756520575101.969,final_consolidated,grand_total
+2020,ALL REGIONS,B,5321745577709.999,final_consolidated,sector_total
+2020,ALL REGIONS,C,3376739915151.8413,final_consolidated,sector_total
+2020,Makkah Region,A,3045175708931.348,final_consolidated,detail
+2020,Makkah Region,ALL SECTORS,7146840949532.756,final_consolidated,region_total
+2020,Makkah Region,B,2566648097527.8506,final_consolidated,detail
+2020,Makkah Region,C,1535017143073.5571,final_consolidated,detail
+2020,Riyadh Region,A,4012859373308.7812,final_consolidated,detail
+2020,Riyadh Region,ALL SECTORS,8609679625569.214,final_consolidated,region_total
+2020,Riyadh Region,B,2755097480182.1484,final_consolidated,detail
+2020,Riyadh Region,C,1841722772078.2842,final_consolidated,detail
+2021,ALL REGIONS,A,7834132938124.451,final_consolidated,sector_total
+2021,ALL REGIONS,ALL SECTORS,16877367429244.172,final_consolidated,grand_total
+2021,ALL REGIONS,B,5432245721884.205,final_consolidated,sector_total
+2021,ALL REGIONS,C,3610988769235.5166,final_consolidated,sector_total
+2021,Makkah Region,A,3340251659847.56,final_consolidated,detail
+2021,Makkah Region,ALL SECTORS,7555643998475.008,final_consolidated,region_total
+2021,Makkah Region,B,2595199460345.7637,final_consolidated,detail
+2021,Makkah Region,C,1620192878281.6846,final_consolidated,detail
+2021,Riyadh Region,A,4493881278276.891,final_consolidated,detail
+2021,Riyadh Region,ALL SECTORS,9321723430769.164,final_consolidated,region_total
+2021,Riyadh Region,B,2837046261538.4414,final_consolidated,detail
+2021,Riyadh Region,C,1990795890953.8318,final_consolidated,detail
