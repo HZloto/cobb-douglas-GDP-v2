@@ -1,0 +1,7 @@
+year,regioncode,sector,gdp_policy,step_policy,row_type,gdp_baseline,step_baseline,pct_diff
+2025,ALL,ALL,3607313198.707598,final_consolidated,grand_total,4341560161.077046,final_consolidated,-16.912053158956976
+2026,ALL,ALL,4118627984.7199435,final_consolidated,grand_total,4956950004.55284,final_consolidated,-16.912053158956976
+2027,ALL,ALL,4551342126.274476,final_consolidated,grand_total,5477740513.893943,final_consolidated,-16.912053158956976
+2028,ALL,ALL,4941344252.164535,final_consolidated,grand_total,5947125232.999084,final_consolidated,-16.912053158956986
+2029,ALL,ALL,5303679760.902337,final_consolidated,grand_total,6383211960.994654,final_consolidated,-16.912053158956986
+2030,ALL,ALL,5648081057.110635,final_consolidated,grand_total,6797714075.082486,final_consolidated,-16.912053158956986

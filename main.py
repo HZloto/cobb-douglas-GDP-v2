@@ -378,10 +378,85 @@ def track_gdp_calculation_stages_tidy(
     return track
 
 
+def apply_policy_scenario(
+    regional_df: pd.DataFrame, 
+    policy_scenario: Optional[dict] = None
+) -> pd.DataFrame:
+    """
+    Apply policy scenario impacts to the input data.
+    
+    Args:
+        regional_df: DataFrame containing regional KPI data
+        policy_scenario: Dictionary with policy impact information
+            Example format:
+            {
+                "2025_impact": 0.01,
+                "2026_impact": 0.015,
+                "2027_impact": 0.02,
+                "2028_impact": 0.02,
+                "2029_impact": 0.025,
+                "2030_impact": 0.03,
+                "KPI": "productivity",
+                "region": "ARI",
+                "sector": "G",
+                "reasoning": "The EV initiative will likely increase productivity..."
+            }
+    
+    Returns:
+        DataFrame with policy impacts applied
+    """
+    if policy_scenario is None or not isinstance(policy_scenario, dict):
+        logging.info("No policy scenario provided, using baseline data")
+        return regional_df
+    
+    logging.info(f"Applying policy scenario: {policy_scenario.get('reasoning', 'No reasoning provided')}")
+    
+    # Create a copy to avoid modifying the original
+    df = regional_df.copy()
+    
+    # Extract policy details
+    policy_kpi = policy_scenario.get("KPI", "").lower()
+    policy_region = policy_scenario.get("region", "")
+    
+    # Map from policy KPI name to the actual KPI name in the data
+    kpi_map = {
+        "productivity": "Productivity",
+        "workforce": "Workforce",
+        "investments": "Investments"
+    }
+    
+    # Get the actual KPI name if it exists in the mapping
+    actual_kpi = kpi_map.get(policy_kpi, "")
+    
+    if not actual_kpi:
+        logging.warning(f"Unknown KPI: {policy_kpi}. Policy scenario will not be applied.")
+        return df
+    
+    # Apply the impact for each year
+    for year in range(2025, 2031):
+        impact_key = f"{year}_impact"
+        if impact_key in policy_scenario:
+            impact_value = policy_scenario[impact_key]
+            
+            # Create mask for rows to be affected
+            mask = (df['year'] == year) & (df['kpi'] == actual_kpi)
+            
+            if policy_region:
+                mask &= (df['regioncode'] == policy_region)
+            
+            # Apply the impact: increase the value by the impact percentage
+            df.loc[mask, 'value'] = df.loc[mask, 'value'] * (1 + impact_value)
+            
+            logging.info(f"Applied {impact_value*100:.1f}% increase to {actual_kpi} in {policy_region or 'all regions'} for {year}")
+    
+    return df
+
 def run_regional_analysis(
     cfg: Settings,
     save_intermediate: bool = False,
-    generate_tracking: bool = False
+    generate_tracking: bool = False,
+    policy_scenario: Optional[dict] = None,
+    output_filename: Optional[str] = None
 ) -> Optional[pd.DataFrame]:
     logging.info("=== Starting Regional GDP Analysis (Tidy Workflow) ===")
     start_all = time.time()
@@ -389,6 +464,10 @@ def run_regional_analysis(
     try:
         ensure_directories_exist(cfg)
         regional_df, sectors_df, regional_spill_df, sector_spill_df = load_data(cfg)
+        
+        # Apply policy scenario if provided
+        if policy_scenario:
+            regional_df = apply_policy_scenario(regional_df, policy_scenario)
 
         base_gdp_df = calculate_base_regional_gdp_tidy(regional_df, cfg)
         adj_gdp_df = apply_regional_spillovers_tidy(base_gdp_df, regional_spill_df)
@@ -408,8 +487,10 @@ def run_regional_analysis(
                 track.to_csv(os.path.join(cfg.output_dir,"gdp_calculation_stages_tidy.csv"), index=False)
 
         if final_df is not None and not final_df.empty:
-            final_df.to_csv(os.path.join(cfg.output_dir, cfg.final_consolidated_csv), index=False)
-            logging.info(f"Final consolidated results saved to {cfg.output_dir}/{cfg.final_consolidated_csv}")
+            # Use custom output filename if provided, otherwise use the default from config
+            final_filename = output_filename or cfg.final_consolidated_csv
+            final_df.to_csv(os.path.join(cfg.output_dir, final_filename), index=False)
+            logging.info(f"Final consolidated results saved to {cfg.output_dir}/{final_filename}")
         logging.info(f"=== Regional GDP Analysis Completed in {time.time() - start_all:.2f} seconds ===")
     except Exception as e:
         logging.error(f"Analysis failed: {e}", exc_info=True)
@@ -420,8 +501,24 @@ def run_regional_analysis(
 if __name__ == "__main__":
     cfg = Settings()
     
-    # Run analysis with real data
+    # Example policy scenario (uncomment and modify as needed)
+    """
+    policy_scenario = {
+        "2025_impact": 0.01,
+        "2026_impact": 0.015,
+        "2027_impact": 0.02,
+        "2028_impact": 0.02,
+        "2029_impact": 0.025,
+        "2030_impact": 0.03,
+        "KPI": "productivity",
+        "region": "ARI", 
+        "sector": "G",  # Note: sector is not used in the regional data stage but included for documentation
+        "reasoning": "The EV initiative will increase productivity in transportation sector in Riyadh."
+    }
+    """
+    
+    # Run analysis with real data (add policy_scenario parameter if needed)
     ensure_directories_exist(cfg)
-    final = run_regional_analysis(cfg, save_intermediate=False, generate_tracking=False)
+    final = run_regional_analysis(cfg, save_intermediate=False, generate_tracking=False, policy_scenario=None)
     if final is not None:
         print(final.head(20))
