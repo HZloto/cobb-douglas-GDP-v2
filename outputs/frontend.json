@@ -1,22 +1,22 @@
 {
   "meta": {
-    "run_id": "2025-04-25T18:59:06.581046+00:00",
-    "prompt": "Oil prices drop to 20 USD by 2030",
+    "run_id": "2025-04-25T19:02:30.862317+00:00",
+    "prompt": "Investments in transportation double by 2030",
     "model": "gemini-2.0-flash",
     "alpha": 0.3,
     "hours_per_worker": 2000
   },
   "national_summary": {
     "baseline_2030": 4247585688694,
-    "scenario_2030": 4073202612860,
-    "delta_abs_2030": -174383075833,
-    "delta_pct_2030": -4.11,
+    "scenario_2030": 4319983256956,
+    "delta_abs_2030": 72397568262,
+    "delta_pct_2030": 1.7,
     "cagr_baseline": 1.82,
-    "cagr_scenario": 1.24,
-    "cumulative_delta_25_30": -669199654206,
+    "cagr_scenario": 2.1,
+    "cumulative_delta_25_30": 249449580897,
     "worst_year": {
-      "year": 2030,
-      "delta_pct": -4.11
+      "year": 2025,
+      "delta_pct": 0.3
     }
   },
   "sector_breakdown_2030": [
@@ -24,37 +24,136 @@
       "sector": "B",
       "year": 2030,
       "GDP_SAR_baseline": 1121912313927.77,
-      "GDP_SAR_scenario": 983042784544.9,
+      "GDP_SAR_scenario": 1121912313927.77,
       "baseline_pct": 26.41,
-      "scenario_pct": 24.13,
-      "delta_pp": -2.28
+      "scenario_pct": 25.97,
+      "delta_pp": -0.44
     },
     {
-      "sector": "C",
+      "sector": "O",
       "year": 2030,
-      "GDP_SAR_baseline": 688673956079.7,
-      "GDP_SAR_scenario": 655728031712.69,
-      "baseline_pct": 16.21,
-      "scenario_pct": 16.1,
-      "delta_pp": -0.11
+      "GDP_SAR_baseline": 379046452247.23,
+      "GDP_SAR_scenario": 379046452247.23,
+      "baseline_pct": 8.92,
+      "scenario_pct": 8.77,
+      "delta_pp": -0.15
     },
     {
-      "sector": "V",
+      "sector": "G",
       "year": 2030,
-      "GDP_SAR_baseline": 0.0,
-      "GDP_SAR_scenario": 0.0,
-      "baseline_pct": 0.0,
-      "scenario_pct": 0.0,
-      "delta_pp": 0.0
+      "GDP_SAR_baseline": 374743600072.29,
+      "GDP_SAR_scenario": 374743600072.29,
+      "baseline_pct": 8.82,
+      "scenario_pct": 8.67,
+      "delta_pp": -0.15
     },
     {
-      "sector": "T",
+      "sector": "F",
       "year": 2030,
-      "GDP_SAR_baseline": 0.0,
-      "GDP_SAR_scenario": 0.0,
-      "baseline_pct": 0.0,
-      "scenario_pct": 0.0,
-      "delta_pp": 0.0
+      "GDP_SAR_baseline": 255079765794.59,
+      "GDP_SAR_scenario": 255079765794.59,
+      "baseline_pct": 6.01,
+      "scenario_pct": 5.9,
+      "delta_pp": -0.1
+    },
+    {
+      "sector": "L",
+      "year": 2030,
+      "GDP_SAR_baseline": 261341746929.95,
+      "GDP_SAR_scenario": 261341746929.95,
+      "baseline_pct": 6.15,
+      "scenario_pct": 6.05,
+      "delta_pp": -0.1
+    },
+    {
+      "sector": "P",
+      "year": 2030,
+      "GDP_SAR_baseline": 235849014567.88,
+      "GDP_SAR_scenario": 235849014567.88,
+      "baseline_pct": 5.55,
+      "scenario_pct": 5.46,
+      "delta_pp": -0.09
+    },
+    {
+      "sector": "K",
+      "year": 2030,
+      "GDP_SAR_baseline": 171525643947.94,
+      "GDP_SAR_scenario": 171525643947.94,
+      "baseline_pct": 4.04,
+      "scenario_pct": 3.97,
+      "delta_pp": -0.07
+    },
+    {
+      "sector": "Q",
+      "year": 2030,
+      "GDP_SAR_baseline": 149256569373.3,
+      "GDP_SAR_scenario": 149256569373.3,
+      "baseline_pct": 3.51,
+      "scenario_pct": 3.46,
+      "delta_pp": -0.06
+    },
+    {
+      "sector": "J",
+      "year": 2030,
+      "GDP_SAR_baseline": 131832562546.75,
+      "GDP_SAR_scenario": 131832562546.75,
+      "baseline_pct": 3.1,
+      "scenario_pct": 3.05,
+      "delta_pp": -0.05
+    },
+    {
+      "sector": "A",
+      "year": 2030,
+      "GDP_SAR_baseline": 123043329009.97,
+      "GDP_SAR_scenario": 123043329009.97,
+      "baseline_pct": 2.9,
+      "scenario_pct": 2.85,
+      "delta_pp": -0.05
+    },
+    {
+      "sector": "I",
+      "year": 2030,
+      "GDP_SAR_baseline": 74661923879.64,
+      "GDP_SAR_scenario": 74661923879.64,
+      "baseline_pct": 1.76,
+      "scenario_pct": 1.73,
+      "delta_pp": -0.03
+    },
+    {
+      "sector": "N",
+      "year": 2030,
+      "GDP_SAR_baseline": 45184516019.73,
+      "GDP_SAR_scenario": 45184516019.73,
+      "baseline_pct": 1.06,
+      "scenario_pct": 1.05,
+      "delta_pp": -0.02
+    },
+    {
+      "sector": "D",
+      "year": 2030,
+      "GDP_SAR_baseline": 46689747358.67,
+      "GDP_SAR_scenario": 46689747358.67,
+      "baseline_pct": 1.1,
+      "scenario_pct": 1.08,
+      "delta_pp": -0.02
+    },
+    {
+      "sector": "M",
+      "year": 2030,
+      "GDP_SAR_baseline": 30208868253.05,
+      "GDP_SAR_scenario": 30208868253.05,
+      "baseline_pct": 0.71,
+      "scenario_pct": 0.7,
+      "delta_pp": -0.01
+    },
+    {
+      "sector": "S",
+      "year": 2030,
+      "GDP_SAR_baseline": 29780766933.99,
+      "GDP_SAR_scenario": 29780766933.99,
+      "baseline_pct": 0.7,
+      "scenario_pct": 0.69,
+      "delta_pp": -0.01
     },
     {
       "sector": "U",
@@ -71,8 +170,8 @@
       "GDP_SAR_baseline": 11827980211.73,
       "GDP_SAR_scenario": 11827980211.73,
       "baseline_pct": 0.28,
-      "scenario_pct": 0.29,
-      "delta_pp": 0.01
+      "scenario_pct": 0.27,
+      "delta_pp": -0.0
     },
     {
       "sector": "R",
@@ -80,196 +179,97 @@
       "GDP_SAR_baseline": 9762721084.2,
       "GDP_SAR_scenario": 9762721084.2,
       "baseline_pct": 0.23,
-      "scenario_pct": 0.24,
-      "delta_pp": 0.01
+      "scenario_pct": 0.23,
+      "delta_pp": -0.0
     },
     {
-      "sector": "S",
+      "sector": "T",
       "year": 2030,
-      "GDP_SAR_baseline": 29780766933.99,
-      "GDP_SAR_scenario": 29780766933.99,
-      "baseline_pct": 0.7,
-      "scenario_pct": 0.73,
-      "delta_pp": 0.03
+      "GDP_SAR_baseline": 0.0,
+      "GDP_SAR_scenario": 0.0,
+      "baseline_pct": 0.0,
+      "scenario_pct": 0.0,
+      "delta_pp": 0.0
     },
     {
-      "sector": "M",
+      "sector": "V",
       "year": 2030,
-      "GDP_SAR_baseline": 30208868253.05,
-      "GDP_SAR_scenario": 30208868253.05,
-      "baseline_pct": 0.71,
-      "scenario_pct": 0.74,
-      "delta_pp": 0.03
+      "GDP_SAR_baseline": 0.0,
+      "GDP_SAR_scenario": 0.0,
+      "baseline_pct": 0.0,
+      "scenario_pct": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "sector": "C",
+      "year": 2030,
+      "GDP_SAR_baseline": 688673956079.7,
+      "GDP_SAR_scenario": 723107653883.69,
+      "baseline_pct": 16.21,
+      "scenario_pct": 16.74,
+      "delta_pp": 0.53
     },
     {
       "sector": "H",
       "year": 2030,
       "GDP_SAR_baseline": 107164210455.63,
-      "GDP_SAR_scenario": 104596588371.57,
+      "GDP_SAR_scenario": 145128080914.26,
       "baseline_pct": 2.52,
-      "scenario_pct": 2.57,
-      "delta_pp": 0.04
-    },
-    {
-      "sector": "D",
-      "year": 2030,
-      "GDP_SAR_baseline": 46689747358.67,
-      "GDP_SAR_scenario": 46689747358.67,
-      "baseline_pct": 1.1,
-      "scenario_pct": 1.15,
-      "delta_pp": 0.05
-    },
-    {
-      "sector": "N",
-      "year": 2030,
-      "GDP_SAR_baseline": 45184516019.73,
-      "GDP_SAR_scenario": 45184516019.73,
-      "baseline_pct": 1.06,
-      "scenario_pct": 1.11,
-      "delta_pp": 0.05
-    },
-    {
-      "sector": "I",
-      "year": 2030,
-      "GDP_SAR_baseline": 74661923879.64,
-      "GDP_SAR_scenario": 74661923879.64,
-      "baseline_pct": 1.76,
-      "scenario_pct": 1.83,
-      "delta_pp": 0.08
-    },
-    {
-      "sector": "A",
-      "year": 2030,
-      "GDP_SAR_baseline": 123043329009.97,
-      "GDP_SAR_scenario": 123043329009.97,
-      "baseline_pct": 2.9,
-      "scenario_pct": 3.02,
-      "delta_pp": 0.12
-    },
-    {
-      "sector": "J",
-      "year": 2030,
-      "GDP_SAR_baseline": 131832562546.75,
-      "GDP_SAR_scenario": 131832562546.75,
-      "baseline_pct": 3.1,
-      "scenario_pct": 3.24,
-      "delta_pp": 0.13
-    },
-    {
-      "sector": "Q",
-      "year": 2030,
-      "GDP_SAR_baseline": 149256569373.3,
-      "GDP_SAR_scenario": 149256569373.3,
-      "baseline_pct": 3.51,
-      "scenario_pct": 3.66,
-      "delta_pp": 0.15
-    },
-    {
-      "sector": "K",
-      "year": 2030,
-      "GDP_SAR_baseline": 171525643947.94,
-      "GDP_SAR_scenario": 171525643947.94,
-      "baseline_pct": 4.04,
-      "scenario_pct": 4.21,
-      "delta_pp": 0.17
-    },
-    {
-      "sector": "P",
-      "year": 2030,
-      "GDP_SAR_baseline": 235849014567.88,
-      "GDP_SAR_scenario": 235849014567.88,
-      "baseline_pct": 5.55,
-      "scenario_pct": 5.79,
-      "delta_pp": 0.24
-    },
-    {
-      "sector": "F",
-      "year": 2030,
-      "GDP_SAR_baseline": 255079765794.59,
-      "GDP_SAR_scenario": 255079765794.59,
-      "baseline_pct": 6.01,
-      "scenario_pct": 6.26,
-      "delta_pp": 0.26
-    },
-    {
-      "sector": "L",
-      "year": 2030,
-      "GDP_SAR_baseline": 261341746929.95,
-      "GDP_SAR_scenario": 261341746929.95,
-      "baseline_pct": 6.15,
-      "scenario_pct": 6.42,
-      "delta_pp": 0.26
-    },
-    {
-      "sector": "O",
-      "year": 2030,
-      "GDP_SAR_baseline": 379046452247.23,
-      "GDP_SAR_scenario": 379046452247.23,
-      "baseline_pct": 8.92,
-      "scenario_pct": 9.31,
-      "delta_pp": 0.38
-    },
-    {
-      "sector": "G",
-      "year": 2030,
-      "GDP_SAR_baseline": 374743600072.29,
-      "GDP_SAR_scenario": 374743600072.29,
-      "baseline_pct": 8.82,
-      "scenario_pct": 9.2,
-      "delta_pp": 0.38
+      "scenario_pct": 3.36,
+      "delta_pp": 0.84
     }
   ],
   "regional_impacts_2030": {
     "top_negative": [
       {
-        "region": "ARI",
-        "year": 2030,
-        "GDP_SAR_baseline": 1177576400498.1282,
-        "GDP_SAR_scenario": 1129231432367.4033,
-        "delta_abs": -48344968130.72485,
-        "delta_pct": -4.11
-      },
-      {
-        "region": "MAK",
-        "year": 2030,
-        "GDP_SAR_baseline": 961593488123.6794,
-        "GDP_SAR_scenario": 922115619412.7057,
-        "delta_abs": -39477868710.973755,
-        "delta_pct": -4.11
-      },
-      {
-        "region": "ASH",
-        "year": 2030,
-        "GDP_SAR_baseline": 674242309071.6464,
-        "GDP_SAR_scenario": 646561537845.1202,
-        "delta_abs": -27680771226.526123,
-        "delta_pct": -4.11
-      }
-    ],
-    "top_positive": [
-      {
         "region": "AHU",
         "year": 2030,
         "GDP_SAR_baseline": 61977705290.676765,
-        "GDP_SAR_scenario": 59433233283.75949,
-        "delta_abs": -2544472006.9172745,
-        "delta_pct": -4.11
+        "GDP_SAR_scenario": 63034078364.24961,
+        "delta_abs": 1056373073.5728455,
+        "delta_pct": 1.7
       },
       {
         "region": "ABA",
         "year": 2030,
         "GDP_SAR_baseline": 63151525467.43835,
-        "GDP_SAR_scenario": 60558862702.70016,
-        "delta_abs": -2592662764.7381897,
-        "delta_pct": -4.11
+        "GDP_SAR_scenario": 64227905606.87711,
+        "delta_abs": 1076380139.4387665,
+        "delta_pct": 1.7
       },
       {
         "region": "NAJ",
         "year": 2030,
         "GDP_SAR_baseline": 75828783369.2874,
-        "GDP_SAR_scenario": 72715660421.37207,
-        "delta_abs": -3113122947.915329,
-        "delta_pct": -4.11
+        "GDP_SAR_scenario": 77121239819.15002,
+        "delta_abs": 1292456449.8626251,
+        "delta_pct": 1.7
+      }
+    ],
+    "top_positive": [
+      {
+        "region": "ARI",
+        "year": 2030,
+        "GDP_SAR_baseline": 1177576400498.1282,
+        "GDP_SAR_scenario": 1197647488897.0667,
+        "delta_abs": 20071088398.938477,
+        "delta_pct": 1.7
+      },
+      {
+        "region": "MAK",
+        "year": 2030,
+        "GDP_SAR_baseline": 961593488123.6794,
+        "GDP_SAR_scenario": 977983276417.1647,
+        "delta_abs": 16389788293.48523,
+        "delta_pct": 1.7
+      },
+      {
+        "region": "ASH",
+        "year": 2030,
+        "GDP_SAR_baseline": 674242309071.6464,
+        "GDP_SAR_scenario": 685734367661.2046,
+        "delta_abs": 11492058589.558228,
+        "delta_pct": 1.7
       }
     ]
   },
@@ -277,112 +277,60 @@
     {
       "year": 2025,
       "baseline": 3881924872046,
-      "scenario": 3830553742076,
-      "delta_abs": -51371129970,
-      "delta_pct": -1.32
+      "scenario": 3893498239679,
+      "delta_abs": 11573367633,
+      "delta_pct": 0.3
     },
     {
       "year": 2026,
       "baseline": 3952491731420,
-      "scenario": 3878110347870,
-      "delta_abs": -74381383549,
-      "delta_pct": -1.88
+      "scenario": 3975801227685,
+      "delta_abs": 23309496264,
+      "delta_pct": 0.59
     },
     {
       "year": 2027,
       "baseline": 4024318545035,
-      "scenario": 3926151131530,
-      "delta_abs": -98167413504,
-      "delta_pct": -2.44
+      "scenario": 4059496386074,
+      "delta_abs": 35177841038,
+      "delta_pct": 0.87
     },
     {
       "year": 2028,
       "baseline": 4097427809028,
-      "scenario": 3974678572197,
-      "delta_abs": -122749236830,
-      "delta_pct": -3.0
+      "scenario": 4144708261853,
+      "delta_abs": 47280452825,
+      "delta_pct": 1.15
     },
     {
       "year": 2029,
       "baseline": 4171842421455,
-      "scenario": 4023695006938,
-      "delta_abs": -148147414517,
-      "delta_pct": -3.55
+      "scenario": 4231553276327,
+      "delta_abs": 59710854872,
+      "delta_pct": 1.43
     },
     {
       "year": 2030,
       "baseline": 4247585688694,
-      "scenario": 4073202612860,
-      "delta_abs": -174383075833,
-      "delta_pct": -4.11
+      "scenario": 4319983256956,
+      "delta_abs": 72397568262,
+      "delta_pct": 1.7
     }
   ],
   "trace": {
-    "reasoning": "A significant drop in oil prices will negatively impact Saudi Arabia's oil sector (B), leading to decreased investments and productivity. This will also affect related sectors like manufacturing (C) and transport (H) due to reduced demand and economic activity. The impact is spread across all regions (all) as oil revenue affects the entire nation. The magnitude of the impact is reflected in negative percentages for Investments and Productivity across these sectors. The impact is expected to be felt gradually over the years 2025-2030.",
+    "reasoning": "Investment in transportation infrastructure directly affects the 'H' (transportation and storage) sector. Doubling investments by 2030 translates to a significant increase in Investments KPI. Furthermore, increased transportation efficiency boosts overall productivity, indirectly affecting manufacturing 'C' due to improved logistics and supply chains. The impact is phased in linearly from 2025 to 2030.",
     "rules": [
       {
         "region": "all",
-        "sector": "B",
-        "kpi": "Investments",
-        "years": {
-          "2025": -5,
-          "2026": -7,
-          "2027": -9,
-          "2028": -11,
-          "2029": -13,
-          "2030": -15
-        }
-      },
-      {
-        "region": "all",
-        "sector": "B",
-        "kpi": "Productivity",
-        "years": {
-          "2025": -3,
-          "2026": -4,
-          "2027": -5,
-          "2028": -6,
-          "2029": -7,
-          "2030": -8
-        }
-      },
-      {
-        "region": "all",
-        "sector": "C",
-        "kpi": "Investments",
-        "years": {
-          "2025": -1,
-          "2026": -2,
-          "2027": -3,
-          "2028": -4,
-          "2029": -5,
-          "2030": -6
-        }
-      },
-      {
-        "region": "all",
-        "sector": "C",
-        "kpi": "Productivity",
-        "years": {
-          "2025": -0.5,
-          "2026": -1,
-          "2027": -1.5,
-          "2028": -2,
-          "2029": -2.5,
-          "2030": -3
-        }
-      },
-      {
-        "region": "all",
         "sector": "H",
         "kpi": "Investments",
         "years": {
-          "2025": -0.5,
-          "2026": -1,
-          "2027": -1.5,
-          "2028": -2,
-          "2029": -2.5,
-          "2030": -3
+          "2025": 16.67,
+          "2026": 33.33,
+          "2027": 50.0,
+          "2028": 66.67,
+          "2029": 83.33,
+          "2030": 100.0
         }
       },
       {
@@ -390,12 +338,25 @@
         "sector": "H",
         "kpi": "Productivity",
         "years": {
-          "2025": -0.25,
-          "2026": -0.5,
-          "2027": -0.75,
-          "2028": -1,
-          "2029": -1.25,
-          "2030": -1.5
+          "2025": 1.67,
+          "2026": 3.33,
+          "2027": 5.0,
+          "2028": 6.67,
+          "2029": 8.33,
+          "2030": 10.0
+        }
+      },
+      {
+        "region": "all",
+        "sector": "C",
+        "kpi": "Productivity",
+        "years": {
+          "2025": 0.83,
+          "2026": 1.67,
+          "2027": 2.5,
+          "2028": 3.33,
+          "2029": 4.17,
+          "2030": 5.0
         }
       }
     ]

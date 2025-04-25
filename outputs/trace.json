@@ -1,71 +1,19 @@
 {
-  "prompt": "Oil prices drop to 20 USD by 2030",
+  "prompt": "Investments in transportation double by 2030",
   "agent_output": {
-    "reasoning": "A significant drop in oil prices will negatively impact Saudi Arabia's oil sector (B), leading to decreased investments and productivity. This will also affect related sectors like manufacturing (C) and transport (H) due to reduced demand and economic activity. The impact is spread across all regions (all) as oil revenue affects the entire nation. The magnitude of the impact is reflected in negative percentages for Investments and Productivity across these sectors. The impact is expected to be felt gradually over the years 2025-2030.",
+    "reasoning": "Investment in transportation infrastructure directly affects the 'H' (transportation and storage) sector. Doubling investments by 2030 translates to a significant increase in Investments KPI. Furthermore, increased transportation efficiency boosts overall productivity, indirectly affecting manufacturing 'C' due to improved logistics and supply chains. The impact is phased in linearly from 2025 to 2030.",
     "rules": [
       {
         "region": "all",
-        "sector": "B",
-        "kpi": "Investments",
-        "years": {
-          "2025": -5,
-          "2026": -7,
-          "2027": -9,
-          "2028": -11,
-          "2029": -13,
-          "2030": -15
-        }
-      },
-      {
-        "region": "all",
-        "sector": "B",
-        "kpi": "Productivity",
-        "years": {
-          "2025": -3,
-          "2026": -4,
-          "2027": -5,
-          "2028": -6,
-          "2029": -7,
-          "2030": -8
-        }
-      },
-      {
-        "region": "all",
-        "sector": "C",
-        "kpi": "Investments",
-        "years": {
-          "2025": -1,
-          "2026": -2,
-          "2027": -3,
-          "2028": -4,
-          "2029": -5,
-          "2030": -6
-        }
-      },
-      {
-        "region": "all",
-        "sector": "C",
-        "kpi": "Productivity",
-        "years": {
-          "2025": -0.5,
-          "2026": -1,
-          "2027": -1.5,
-          "2028": -2,
-          "2029": -2.5,
-          "2030": -3
-        }
-      },
-      {
-        "region": "all",
         "sector": "H",
         "kpi": "Investments",
         "years": {
-          "2025": -0.5,
-          "2026": -1,
-          "2027": -1.5,
-          "2028": -2,
-          "2029": -2.5,
-          "2030": -3
+          "2025": 16.67,
+          "2026": 33.33,
+          "2027": 50.0,
+          "2028": 66.67,
+          "2029": 83.33,
+          "2030": 100.0
         }
       },
       {
@@ -73,12 +21,25 @@
         "sector": "H",
         "kpi": "Productivity",
         "years": {
-          "2025": -0.25,
-          "2026": -0.5,
-          "2027": -0.75,
-          "2028": -1,
-          "2029": -1.25,
-          "2030": -1.5
+          "2025": 1.67,
+          "2026": 3.33,
+          "2027": 5.0,
+          "2028": 6.67,
+          "2029": 8.33,
+          "2030": 10.0
+        }
+      },
+      {
+        "region": "all",
+        "sector": "C",
+        "kpi": "Productivity",
+        "years": {
+          "2025": 0.83,
+          "2026": 1.67,
+          "2027": 2.5,
+          "2028": 3.33,
+          "2029": 4.17,
+          "2030": 5.0
         }
       }
     ]
