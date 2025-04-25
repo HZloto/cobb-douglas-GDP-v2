@@ -1,32 +1,58 @@
 {
-  "prompt": "toursim divided by two between 2028 and 2030 in the meccah region",
+  "prompt": "From 2026 onwards hotels in the alula region must be carbon neutral",
   "agent_output": {
-    "reasoning": "The tourism sector is primarily represented by 'I' (Accommodation & Food). A halving translates to a -50% impact. Mecca (MAK) is the specific region targeted. I've applied this to Workforce, as reduced tourism will directly affect employment, and to Investments, as it is likely to deter investments in this sector. The impact is distributed linearly from 2028 to 2030.",
+    "reasoning": "Carbon neutrality requirements will drive investment in green technologies and improved energy efficiency in Alula's hotels. This will increase investments and productivity but also slightly decrease workforce due to automation. The impact is focused on sector I (Accommodation & Food) and the Alula region (AMA). The effects ramp up starting in 2026.",
     "rules": [
       {
-        "region": "MAK",
-        "sector": "I",
-        "kpi": "Workforce",
-        "years": {
-          "2025": 0,
-          "2026": 0,
-          "2027": 0,
-          "2028": -16.67,
-          "2029": -33.33,
-          "2030": -50
-        }
-      },
-      {
-        "region": "MAK",
+        "region": "AMA",
         "sector": "I",
         "kpi": "Investments",
         "years": {
           "2025": 0,
-          "2026": 0,
-          "2027": 0,
-          "2028": -16.67,
-          "2029": -33.33,
-          "2030": -50
+          "2026": 3,
+          "2027": 4,
+          "2028": 5,
+          "2029": 6,
+          "2030": 7
+        }
+      },
+      {
+        "region": "AMA",
+        "sector": "I",
+        "kpi": "Productivity",
+        "years": {
+          "2025": 0,
+          "2026": 2,
+          "2027": 3,
+          "2028": 4,
+          "2029": 5,
+          "2030": 6
+        }
+      },
+      {
+        "region": "AMA",
+        "sector": "I",
+        "kpi": "Workforce",
+        "years": {
+          "2025": 0,
+          "2026": -1,
+          "2027": -1.5,
+          "2028": -2,
+          "2029": -2.5,
+          "2030": -3
+        }
+      },
+      {
+        "region": "AMA",
+        "sector": "H",
+        "kpi": "Productivity",
+        "years": {
+          "2025": 0,
+          "2026": 0.5,
+          "2027": 0.75,
+          "2028": 1,
+          "2029": 1.25,
+          "2030": 1.5
         }
       }
     ]

@@ -1,1225 +1,195 @@
 {
   "meta": {
-    "run_id": "2025-04-25T17:27:51.533430+00:00",
-    "prompt": "toursim divided by two between 2028 and 2030 in the meccah region",
+    "run_id": "2025-04-25T18:36:58.248349+00:00",
+    "prompt": "From 2026 onwards hotels in the alula region must be carbon neutral",
     "model": "gemini-2.0-flash",
     "alpha": 0.3,
     "hours_per_worker": 2000
   },
-  "national_gdp": [
-    {
+  "national_summary": {
+    "baseline_2030": 4247585688694,
+    "scenario_2030": 4247918978673,
+    "delta_abs_2030": 333289979,
+    "delta_pct_2030": 0.01,
+    "cagr_baseline": 1.82,
+    "cagr_scenario": 1.82,
+    "cumulative_delta_25_30": 1104811224,
+    "worst_year": {
       "year": 2025,
-      "baseline": 3881924872046.2563,
-      "scenario": 3881924872046.2563,
-      "delta_abs": 0.0,
       "delta_pct": 0.0
-    },
-    {
-      "year": 2026,
-      "baseline": 3952491731420.603,
-      "scenario": 3952491731420.603,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "year": 2027,
-      "baseline": 4024318545035.1304,
-      "scenario": 4024318545035.1304,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "year": 2028,
-      "baseline": 4097427809028.2446,
-      "scenario": 4094709784929.7686,
-      "delta_abs": -2718024098.476074,
-      "delta_pct": -0.06633488679134746
-    },
-    {
-      "year": 2029,
-      "baseline": 4171842421455.5303,
-      "scenario": 4166309307660.1367,
-      "delta_abs": -5533113795.393555,
-      "delta_pct": -0.13262998062767398
-    },
-    {
-      "year": 2030,
-      "baseline": 4247585688694.016,
-      "scenario": 4239134485459.7036,
-      "delta_abs": -8451203234.3125,
-      "delta_pct": -0.19896486742592234
     }
-  ],
-  "sector_summary": [
-    {
-      "sector": "A",
-      "year": 2025,
-      "GDP_SAR_baseline": 112450929610.02745,
-      "GDP_SAR_scenario": 112450929610.02745,
-      "baseline_pct": 2.89678273837257,
-      "scenario_pct": 2.89678273837257,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "B",
-      "year": 2025,
-      "GDP_SAR_baseline": 1025330537118.1904,
-      "GDP_SAR_scenario": 1025330537118.1904,
-      "baseline_pct": 26.41294128337198,
-      "scenario_pct": 26.41294128337198,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "C",
-      "year": 2025,
-      "GDP_SAR_baseline": 629388258376.9523,
-      "GDP_SAR_scenario": 629388258376.9523,
-      "baseline_pct": 16.21330342864638,
-      "scenario_pct": 16.21330342864638,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "D",
-      "year": 2025,
-      "GDP_SAR_baseline": 42670379090.93423,
-      "GDP_SAR_scenario": 42670379090.93423,
-      "baseline_pct": 1.099206720825631,
-      "scenario_pct": 1.099206720825631,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "E",
-      "year": 2025,
-      "GDP_SAR_baseline": 10809747921.38598,
-      "GDP_SAR_scenario": 10809747921.38598,
-      "baseline_pct": 0.2784636044666135,
-      "scenario_pct": 0.2784636044666135,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "F",
-      "year": 2025,
-      "GDP_SAR_baseline": 233120779606.9585,
-      "GDP_SAR_scenario": 233120779606.9585,
-      "baseline_pct": 6.005288285862032,
-      "scenario_pct": 6.005288285862032,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "G",
-      "year": 2025,
-      "GDP_SAR_baseline": 342483144152.13116,
-      "GDP_SAR_scenario": 342483144152.13116,
-      "baseline_pct": 8.82250830299042,
-      "scenario_pct": 8.82250830299042,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "H",
-      "year": 2025,
-      "GDP_SAR_baseline": 97938792627.54904,
-      "GDP_SAR_scenario": 97938792627.54904,
-      "baseline_pct": 2.5229440511022343,
-      "scenario_pct": 2.5229440511022343,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "I",
-      "year": 2025,
-      "GDP_SAR_baseline": 68234522045.07331,
-      "GDP_SAR_scenario": 68234522045.07331,
-      "baseline_pct": 1.757749680742926,
-      "scenario_pct": 1.757749680742926,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "J",
-      "year": 2025,
-      "GDP_SAR_baseline": 120483526644.9798,
-      "GDP_SAR_scenario": 120483526644.9798,
-      "baseline_pct": 3.1037057804127475,
-      "scenario_pct": 3.1037057804127475,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "K",
-      "year": 2025,
-      "GDP_SAR_baseline": 156759559941.54114,
-      "GDP_SAR_scenario": 156759559941.54114,
-      "baseline_pct": 4.038191492843327,
-      "scenario_pct": 4.038191492843327,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "L",
-      "year": 2025,
-      "GDP_SAR_baseline": 238843687197.64917,
-      "GDP_SAR_scenario": 238843687197.64917,
-      "baseline_pct": 6.1527127667400965,
-      "scenario_pct": 6.1527127667400965,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "M",
-      "year": 2025,
-      "GDP_SAR_baseline": 27608285181.353317,
-      "GDP_SAR_scenario": 27608285181.353317,
-      "baseline_pct": 0.7112009142722105,
-      "scenario_pct": 0.7112009142722105,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "N",
-      "year": 2025,
-      "GDP_SAR_baseline": 41294728210.42405,
-      "GDP_SAR_scenario": 41294728210.42405,
-      "baseline_pct": 1.0637693817257365,
-      "scenario_pct": 1.0637693817257365,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "O",
-      "year": 2025,
-      "GDP_SAR_baseline": 346415577800.8537,
-      "GDP_SAR_scenario": 346415577800.8537,
-      "baseline_pct": 8.923809430094655,
-      "scenario_pct": 8.923809430094655,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "P",
-      "year": 2025,
-      "GDP_SAR_baseline": 215545541109.7423,
-      "GDP_SAR_scenario": 215545541109.7423,
-      "baseline_pct": 5.5525428289940875,
-      "scenario_pct": 5.5525428289940875,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "Q",
-      "year": 2025,
-      "GDP_SAR_baseline": 136407557472.61427,
-      "GDP_SAR_scenario": 136407557472.61427,
-      "baseline_pct": 3.513915440633207,
-      "scenario_pct": 3.513915440633207,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "R",
-      "year": 2025,
-      "GDP_SAR_baseline": 8922280224.905647,
-      "GDP_SAR_scenario": 8922280224.905647,
-      "baseline_pct": 0.22984165121677116,
-      "scenario_pct": 0.22984165121677116,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "S",
-      "year": 2025,
-      "GDP_SAR_baseline": 27217037712.9907,
-      "GDP_SAR_scenario": 27217037712.9907,
-      "baseline_pct": 0.7011222166863816,
-      "scenario_pct": 0.7011222166863816,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "T",
-      "year": 2025,
-      "GDP_SAR_baseline": 0.0,
-      "GDP_SAR_scenario": 0.0,
-      "baseline_pct": 0.0,
-      "scenario_pct": 0.0,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "U",
-      "year": 2025,
-      "GDP_SAR_baseline": 0.0,
-      "GDP_SAR_scenario": 0.0,
-      "baseline_pct": 0.0,
-      "scenario_pct": 0.0,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "V",
-      "year": 2025,
-      "GDP_SAR_baseline": 0.0,
-      "GDP_SAR_scenario": 0.0,
-      "baseline_pct": 0.0,
-      "scenario_pct": 0.0,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "A",
-      "year": 2026,
-      "GDP_SAR_baseline": 114495098200.12329,
-      "GDP_SAR_scenario": 114495098200.12329,
-      "baseline_pct": 2.8967827380873863,
-      "scenario_pct": 2.8967827380873863,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "B",
-      "year": 2026,
-      "GDP_SAR_baseline": 1043969320292.2566,
-      "GDP_SAR_scenario": 1043969320292.2566,
-      "baseline_pct": 26.412941284434606,
-      "scenario_pct": 26.412941284434606,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "C",
-      "year": 2026,
-      "GDP_SAR_baseline": 640829477409.482,
-      "GDP_SAR_scenario": 640829477409.482,
-      "baseline_pct": 16.21330342869953,
-      "scenario_pct": 16.21330342869953,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "D",
-      "year": 2026,
-      "GDP_SAR_baseline": 43446054745.74563,
-      "GDP_SAR_scenario": 43446054745.74563,
-      "baseline_pct": 1.0992067206711211,
-      "scenario_pct": 1.0992067206711211,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "E",
-      "year": 2026,
-      "GDP_SAR_baseline": 11006250941.493275,
-      "GDP_SAR_scenario": 11006250941.493275,
-      "baseline_pct": 0.2784636044649589,
-      "scenario_pct": 0.2784636044649589,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "F",
-      "year": 2026,
-      "GDP_SAR_baseline": 237358522939.2061,
-      "GDP_SAR_scenario": 237358522939.2061,
-      "baseline_pct": 6.00528828567327,
-      "scenario_pct": 6.00528828567327,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "G",
-      "year": 2026,
-      "GDP_SAR_baseline": 348708911182.1374,
-      "GDP_SAR_scenario": 348708911182.1374,
-      "baseline_pct": 8.822508303054807,
-      "scenario_pct": 8.822508303054807,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "H",
-      "year": 2026,
-      "GDP_SAR_baseline": 99719155007.4399,
-      "GDP_SAR_scenario": 99719155007.4399,
-      "baseline_pct": 2.5229440510834134,
-      "scenario_pct": 2.5229440510834134,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "I",
-      "year": 2026,
-      "GDP_SAR_baseline": 69474910789.4612,
-      "GDP_SAR_scenario": 69474910789.4612,
-      "baseline_pct": 1.757749680718258,
-      "scenario_pct": 1.757749680718258,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "J",
-      "year": 2026,
-      "GDP_SAR_baseline": 122673714334.71768,
-      "GDP_SAR_scenario": 122673714334.71768,
-      "baseline_pct": 3.103705780318643,
-      "scenario_pct": 3.103705780318643,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "K",
-      "year": 2026,
-      "GDP_SAR_baseline": 159609184851.77563,
-      "GDP_SAR_scenario": 159609184851.77563,
-      "baseline_pct": 4.038191492798113,
-      "scenario_pct": 4.038191492798113,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "L",
-      "year": 2026,
-      "GDP_SAR_baseline": 243185463358.19998,
-      "GDP_SAR_scenario": 243185463358.19998,
-      "baseline_pct": 6.152712766606962,
-      "scenario_pct": 6.152712766606962,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "M",
-      "year": 2026,
-      "GDP_SAR_baseline": 28110157329.89258,
-      "GDP_SAR_scenario": 28110157329.89258,
-      "baseline_pct": 0.7112009142594521,
-      "scenario_pct": 0.7112009142594521,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "N",
-      "year": 2026,
-      "GDP_SAR_baseline": 42045396851.8755,
-      "GDP_SAR_scenario": 42045396851.8755,
-      "baseline_pct": 1.0637693816696123,
-      "scenario_pct": 1.0637693816696123,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "O",
-      "year": 2026,
-      "GDP_SAR_baseline": 352712829841.3932,
-      "GDP_SAR_scenario": 352712829841.3932,
-      "baseline_pct": 8.923809429820649,
-      "scenario_pct": 8.923809429820649,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "P",
-      "year": 2026,
-      "GDP_SAR_baseline": 219463796205.48593,
-      "GDP_SAR_scenario": 219463796205.48593,
-      "baseline_pct": 5.552542829143538,
-      "scenario_pct": 5.552542829143538,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "Q",
-      "year": 2026,
-      "GDP_SAR_baseline": 138887217239.6488,
-      "GDP_SAR_scenario": 138887217239.6488,
-      "baseline_pct": 3.5139154406207957,
-      "scenario_pct": 3.5139154406207957,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "R",
-      "year": 2026,
-      "GDP_SAR_baseline": 9084472259.745777,
-      "GDP_SAR_scenario": 9084472259.745777,
-      "baseline_pct": 0.22984165121784178,
-      "scenario_pct": 0.22984165121784178,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "S",
-      "year": 2026,
-      "GDP_SAR_baseline": 27711797640.522858,
-      "GDP_SAR_scenario": 27711797640.522858,
-      "baseline_pct": 0.7011222166570528,
-      "scenario_pct": 0.7011222166570528,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "T",
-      "year": 2026,
-      "GDP_SAR_baseline": 0.0,
-      "GDP_SAR_scenario": 0.0,
-      "baseline_pct": 0.0,
-      "scenario_pct": 0.0,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "U",
-      "year": 2026,
-      "GDP_SAR_baseline": 0.0,
-      "GDP_SAR_scenario": 0.0,
-      "baseline_pct": 0.0,
-      "scenario_pct": 0.0,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "V",
-      "year": 2026,
-      "GDP_SAR_baseline": 0.0,
-      "GDP_SAR_scenario": 0.0,
-      "baseline_pct": 0.0,
-      "scenario_pct": 0.0,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "A",
-      "year": 2027,
-      "GDP_SAR_baseline": 116575764931.87518,
-      "GDP_SAR_scenario": 116575764931.87518,
-      "baseline_pct": 2.896782737929547,
-      "scenario_pct": 2.896782737929547,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "B",
-      "year": 2027,
-      "GDP_SAR_baseline": 1062940894421.0084,
-      "GDP_SAR_scenario": 1062940894421.0084,
-      "baseline_pct": 26.4129412849879,
-      "scenario_pct": 26.4129412849879,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "C",
-      "year": 2027,
-      "GDP_SAR_baseline": 652474976635.7422,
-      "GDP_SAR_scenario": 652474976635.7422,
-      "baseline_pct": 16.21330342849503,
-      "scenario_pct": 16.21330342849503,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "D",
-      "year": 2027,
-      "GDP_SAR_baseline": 44235579909.35077,
-      "GDP_SAR_scenario": 44235579909.35077,
-      "baseline_pct": 1.099206720698712,
-      "scenario_pct": 1.099206720698712,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "E",
-      "year": 2027,
-      "GDP_SAR_baseline": 11206262475.927612,
-      "GDP_SAR_scenario": 11206262475.927612,
-      "baseline_pct": 0.2784636044716929,
-      "scenario_pct": 0.2784636044716929,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "F",
-      "year": 2027,
-      "GDP_SAR_baseline": 241671930151.57043,
-      "GDP_SAR_scenario": 241671930151.57043,
-      "baseline_pct": 6.005288285384991,
-      "scenario_pct": 6.005288285384991,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "G",
-      "year": 2027,
-      "GDP_SAR_baseline": 355045837785.459,
-      "GDP_SAR_scenario": 355045837785.459,
-      "baseline_pct": 8.822508303262548,
-      "scenario_pct": 8.822508303262548,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "H",
-      "year": 2027,
-      "GDP_SAR_baseline": 101531305326.4406,
-      "GDP_SAR_scenario": 101531305326.4406,
-      "baseline_pct": 2.5229440510294965,
-      "scenario_pct": 2.5229440510294965,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "I",
-      "year": 2027,
-      "GDP_SAR_baseline": 70737446374.31996,
-      "GDP_SAR_scenario": 70737446374.31996,
-      "baseline_pct": 1.7577496806655613,
-      "scenario_pct": 1.7577496806655613,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "J",
-      "year": 2027,
-      "GDP_SAR_baseline": 124903007308.45108,
-      "GDP_SAR_scenario": 124903007308.45108,
-      "baseline_pct": 3.1037057805114863,
-      "scenario_pct": 3.1037057805114863,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "K",
-      "year": 2027,
-      "GDP_SAR_baseline": 162509689134.2267,
-      "GDP_SAR_scenario": 162509689134.2267,
-      "baseline_pct": 4.038191492935311,
-      "scenario_pct": 4.038191492935311,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "L",
-      "year": 2027,
-      "GDP_SAR_baseline": 247604760872.13333,
-      "GDP_SAR_scenario": 247604760872.13333,
-      "baseline_pct": 6.15271276618019,
-      "scenario_pct": 6.15271276618019,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "M",
-      "year": 2027,
-      "GDP_SAR_baseline": 28620990287.932087,
-      "GDP_SAR_scenario": 28620990287.932087,
-      "baseline_pct": 0.7112009143322484,
-      "scenario_pct": 0.7112009143322484,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "N",
-      "year": 2027,
-      "GDP_SAR_baseline": 42809468504.20528,
-      "GDP_SAR_scenario": 42809468504.20528,
-      "baseline_pct": 1.0637693817011589,
-      "scenario_pct": 1.0637693817011589,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "O",
-      "year": 2027,
-      "GDP_SAR_baseline": 359122517804.18164,
-      "GDP_SAR_scenario": 359122517804.18164,
-      "baseline_pct": 8.923809429729094,
-      "scenario_pct": 8.923809429729094,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "P",
-      "year": 2027,
-      "GDP_SAR_baseline": 223452010798.8317,
-      "GDP_SAR_scenario": 223452010798.8317,
-      "baseline_pct": 5.552542829257594,
-      "scenario_pct": 5.552542829257594,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "Q",
-      "year": 2027,
-      "GDP_SAR_baseline": 141411150731.5156,
-      "GDP_SAR_scenario": 141411150731.5156,
-      "baseline_pct": 3.513915440565134,
-      "scenario_pct": 3.513915440565134,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "R",
-      "year": 2027,
-      "GDP_SAR_baseline": 9249560193.70756,
-      "GDP_SAR_scenario": 9249560193.70756,
-      "baseline_pct": 0.2298416512062371,
-      "scenario_pct": 0.2298416512062371,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "S",
-      "year": 2027,
-      "GDP_SAR_baseline": 28215391388.2517,
-      "GDP_SAR_scenario": 28215391388.2517,
-      "baseline_pct": 0.7011222166560722,
-      "scenario_pct": 0.7011222166560722,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "T",
-      "year": 2027,
-      "GDP_SAR_baseline": 0.0,
-      "GDP_SAR_scenario": 0.0,
-      "baseline_pct": 0.0,
-      "scenario_pct": 0.0,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "U",
-      "year": 2027,
-      "GDP_SAR_baseline": 0.0,
-      "GDP_SAR_scenario": 0.0,
-      "baseline_pct": 0.0,
-      "scenario_pct": 0.0,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "V",
-      "year": 2027,
-      "GDP_SAR_baseline": 0.0,
-      "GDP_SAR_scenario": 0.0,
-      "baseline_pct": 0.0,
-      "scenario_pct": 0.0,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "A",
-      "year": 2028,
-      "GDP_SAR_baseline": 118693581490.9307,
-      "GDP_SAR_scenario": 118693581490.9307,
-      "baseline_pct": 2.8967827384146236,
-      "scenario_pct": 2.8987055914871513,
-      "delta_pp": 0.0019228530725277082
-    },
-    {
-      "sector": "B",
-      "year": 2028,
-      "GDP_SAR_baseline": 1082251201359.4543,
-      "GDP_SAR_scenario": 1082251201359.4543,
-      "baseline_pct": 26.412941284159526,
-      "scenario_pct": 26.430473909105547,
-      "delta_pp": 0.017532624946021258
-    },
-    {
-      "sector": "C",
-      "year": 2028,
-      "GDP_SAR_baseline": 664328403446.2523,
-      "GDP_SAR_scenario": 664328403446.2523,
-      "baseline_pct": 16.213303428616257,
-      "scenario_pct": 16.224065644194287,
-      "delta_pp": 0.01076221557802981
-    },
-    {
-      "sector": "D",
-      "year": 2028,
-      "GDP_SAR_baseline": 45039201854.15411,
-      "GDP_SAR_scenario": 45039201854.15411,
-      "baseline_pct": 1.0992067207362395,
-      "scenario_pct": 1.0999363622769327,
-      "delta_pp": 0.0007296415406932155
-    },
-    {
-      "sector": "E",
-      "year": 2028,
-      "GDP_SAR_baseline": 11409845167.218178,
-      "GDP_SAR_scenario": 11409845167.218178,
-      "baseline_pct": 0.27846360446126234,
-      "scenario_pct": 0.27864844559219176,
-      "delta_pp": 0.0001848411309294251
-    },
-    {
-      "sector": "F",
-      "year": 2028,
-      "GDP_SAR_baseline": 246062352247.2839,
-      "GDP_SAR_scenario": 246062352247.2839,
-      "baseline_pct": 6.005288286107489,
-      "scenario_pct": 6.009274531564984,
-      "delta_pp": 0.003986245457494597
-    },
-    {
-      "sector": "G",
-      "year": 2028,
-      "GDP_SAR_baseline": 361495908652.5338,
-      "GDP_SAR_scenario": 361495908652.5338,
-      "baseline_pct": 8.82250830279465,
-      "scenario_pct": 8.828364588449926,
-      "delta_pp": 0.005856285655275073
-    },
-    {
-      "sector": "H",
-      "year": 2028,
-      "GDP_SAR_baseline": 103375811154.75836,
-      "GDP_SAR_scenario": 103375811154.75836,
-      "baseline_pct": 2.522944051069815,
-      "scenario_pct": 2.524618754062235,
-      "delta_pp": 0.0016747029924202295
-    },
-    {
-      "sector": "I",
-      "year": 2028,
-      "GDP_SAR_baseline": 72022524227.97171,
-      "GDP_SAR_scenario": 69304500129.49544,
-      "baseline_pct": 1.7577496806478876,
-      "scenario_pct": 1.6925375367154167,
-      "delta_pp": -0.06521214393247088
-    },
-    {
-      "sector": "J",
-      "year": 2028,
-      "GDP_SAR_baseline": 127172103760.12654,
-      "GDP_SAR_scenario": 127172103760.12654,
-      "baseline_pct": 3.1037057804878563,
-      "scenario_pct": 3.10576598683923,
-      "delta_pp": 0.002060206351373939
-    },
-    {
-      "sector": "K",
-      "year": 2028,
-      "GDP_SAR_baseline": 165461981219.09628,
-      "GDP_SAR_scenario": 165461981219.09628,
-      "baseline_pct": 4.038191493075692,
-      "scenario_pct": 4.040872000942901,
-      "delta_pp": 0.002680507867209414
-    },
-    {
-      "sector": "L",
-      "year": 2028,
-      "GDP_SAR_baseline": 252102963894.39868,
-      "GDP_SAR_scenario": 252102963894.39868,
-      "baseline_pct": 6.152712766260743,
-      "scenario_pct": 6.156796870494759,
-      "delta_pp": 0.0040841042340158396
-    },
-    {
-      "sector": "M",
-      "year": 2028,
-      "GDP_SAR_baseline": 29140944040.6472,
-      "GDP_SAR_scenario": 29140944040.6472,
-      "baseline_pct": 0.7112009143013635,
-      "scenario_pct": 0.7116730017814198,
-      "delta_pp": 0.00047208748005633794
-    },
-    {
-      "sector": "N",
-      "year": 2028,
-      "GDP_SAR_baseline": 43587182473.124016,
-      "GDP_SAR_scenario": 43587182473.124016,
-      "baseline_pct": 1.0637693817834768,
-      "scenario_pct": 1.0644755004015898,
-      "delta_pp": 0.000706118618112983
-    },
-    {
-      "sector": "O",
-      "year": 2028,
-      "GDP_SAR_baseline": 365646649211.1752,
-      "GDP_SAR_scenario": 365646649211.1752,
-      "baseline_pct": 8.923809430040764,
-      "scenario_pct": 8.929732958289415,
-      "delta_pp": 0.0059235282486511665
-    },
-    {
-      "sector": "P",
-      "year": 2028,
-      "GDP_SAR_baseline": 227511433979.77567,
-      "GDP_SAR_scenario": 227511433979.77567,
-      "baseline_pct": 5.552542828905454,
-      "scenario_pct": 5.556228546821857,
-      "delta_pp": 0.0036857179164027087
-    },
-    {
-      "sector": "Q",
-      "year": 2028,
-      "GDP_SAR_baseline": 143980148436.27707,
-      "GDP_SAR_scenario": 143980148436.27707,
-      "baseline_pct": 3.5139154402923753,
-      "scenario_pct": 3.516247939382268,
-      "delta_pp": 0.0023324990898925257
-    },
-    {
-      "sector": "R",
-      "year": 2028,
-      "GDP_SAR_baseline": 9417595734.03888,
-      "GDP_SAR_scenario": 9417595734.03888,
-      "baseline_pct": 0.22984165122539105,
-      "scenario_pct": 0.22999421762928207,
-      "delta_pp": 0.0001525664038910246
-    },
-    {
-      "sector": "S",
-      "year": 2028,
-      "GDP_SAR_baseline": 28727976679.028,
-      "GDP_SAR_scenario": 28727976679.028,
-      "baseline_pct": 0.7011222166191426,
-      "scenario_pct": 0.7015876139686108,
-      "delta_pp": 0.00046539734946815514
-    },
-    {
-      "sector": "T",
-      "year": 2028,
-      "GDP_SAR_baseline": 0.0,
-      "GDP_SAR_scenario": 0.0,
-      "baseline_pct": 0.0,
-      "scenario_pct": 0.0,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "U",
-      "year": 2028,
-      "GDP_SAR_baseline": 0.0,
-      "GDP_SAR_scenario": 0.0,
-      "baseline_pct": 0.0,
-      "scenario_pct": 0.0,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "V",
-      "year": 2028,
-      "GDP_SAR_baseline": 0.0,
-      "GDP_SAR_scenario": 0.0,
-      "baseline_pct": 0.0,
-      "scenario_pct": 0.0,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "A",
-      "year": 2029,
-      "GDP_SAR_baseline": 120849211123.65501,
-      "GDP_SAR_scenario": 120849211123.65501,
-      "baseline_pct": 2.89678273805681,
-      "scenario_pct": 2.9006298428554693,
-      "delta_pp": 0.003847104798659462
-    },
-    {
-      "sector": "B",
-      "year": 2029,
-      "GDP_SAR_baseline": 1101906289265.8408,
-      "GDP_SAR_scenario": 1101906289265.8408,
-      "baseline_pct": 26.41294128461814,
-      "scenario_pct": 26.44801928747552,
-      "delta_pp": 0.03507800285738227
-    },
-    {
-      "sector": "C",
-      "year": 2029,
-      "GDP_SAR_baseline": 676393470330.7333,
-      "GDP_SAR_scenario": 676393470330.7333,
-      "baseline_pct": 16.21330342805095,
-      "scenario_pct": 16.23483568747819,
-      "delta_pp": 0.021532259427239353
-    },
-    {
-      "sector": "D",
-      "year": 2029,
-      "GDP_SAR_baseline": 45857172274.46393,
-      "GDP_SAR_scenario": 45857172274.46393,
-      "baseline_pct": 1.0992067207194427,
-      "scenario_pct": 1.1006665345309663,
-      "delta_pp": 0.0014598138115236026
-    },
-    {
-      "sector": "E",
-      "year": 2029,
-      "GDP_SAR_baseline": 11617062778.589031,
-      "GDP_SAR_scenario": 11617062778.589031,
-      "baseline_pct": 0.2784636044459203,
-      "scenario_pct": 0.27883342115838616,
-      "delta_pp": 0.0003698167124658869
-    },
-    {
-      "sector": "F",
-      "year": 2029,
-      "GDP_SAR_baseline": 250531164235.5098,
-      "GDP_SAR_scenario": 250531164235.5098,
-      "baseline_pct": 6.005288285747404,
-      "scenario_pct": 6.013263676196234,
-      "delta_pp": 0.007975390448830666
-    },
-    {
-      "sector": "G",
-      "year": 2029,
-      "GDP_SAR_baseline": 368061144013.5714,
-      "GDP_SAR_scenario": 368061144013.5714,
-      "baseline_pct": 8.822508302822165,
-      "scenario_pct": 8.83422513390587,
-      "delta_pp": 0.011716831083704804
-    },
-    {
-      "sector": "H",
-      "year": 2029,
-      "GDP_SAR_baseline": 105253250197.22371,
-      "GDP_SAR_scenario": 105253250197.22371,
-      "baseline_pct": 2.522944051192171,
-      "scenario_pct": 2.52629467533066,
-      "delta_pp": 0.003350624138489078
-    },
-    {
-      "sector": "I",
-      "year": 2029,
-      "GDP_SAR_baseline": 73330546842.00882,
-      "GDP_SAR_scenario": 67797433046.61518,
-      "baseline_pct": 1.757749680689623,
-      "scenario_pct": 1.6272779585030681,
-      "delta_pp": -0.13047172218655478
-    },
-    {
-      "sector": "J",
-      "year": 2029,
-      "GDP_SAR_baseline": 129481714393.83015,
-      "GDP_SAR_scenario": 129481714393.83015,
-      "baseline_pct": 3.103705780638157,
-      "scenario_pct": 3.1078276919038705,
-      "delta_pp": 0.004121911265713596
-    },
-    {
-      "sector": "K",
-      "year": 2029,
-      "GDP_SAR_baseline": 168466985770.5594,
-      "GDP_SAR_scenario": 168466985770.5594,
-      "baseline_pct": 4.038191493143269,
-      "scenario_pct": 4.043554458638431,
-      "delta_pp": 0.005362965495161909
-    },
-    {
-      "sector": "L",
-      "year": 2029,
-      "GDP_SAR_baseline": 256681481255.2057,
-      "GDP_SAR_scenario": 256681481255.2057,
-      "baseline_pct": 6.152712766309402,
-      "scenario_pct": 6.160883945492802,
-      "delta_pp": 0.00817117918340049
-    },
-    {
-      "sector": "M",
-      "year": 2029,
-      "GDP_SAR_baseline": 29670181444.41402,
-      "GDP_SAR_scenario": 29670181444.41402,
-      "baseline_pct": 0.7112009142968126,
-      "scenario_pct": 0.7121454326461721,
-      "delta_pp": 0.0009445183493594911
-    },
-    {
-      "sector": "N",
-      "year": 2029,
-      "GDP_SAR_baseline": 44378782328.55582,
-      "GDP_SAR_scenario": 44378782328.55582,
-      "baseline_pct": 1.0637693816122693,
-      "scenario_pct": 1.0651821324682114,
-      "delta_pp": 0.0014127508559420576
-    },
-    {
-      "sector": "O",
-      "year": 2029,
-      "GDP_SAR_baseline": 372287267411.4209,
-      "GDP_SAR_scenario": 372287267411.4209,
-      "baseline_pct": 8.923809430019944,
-      "scenario_pct": 8.935660795201573,
-      "delta_pp": 0.011851365181628992
-    },
-    {
-      "sector": "P",
-      "year": 2029,
-      "GDP_SAR_baseline": 231643337220.70746,
-      "GDP_SAR_scenario": 231643337220.70746,
-      "baseline_pct": 5.552542829263635,
-      "scenario_pct": 5.5599169460320725,
-      "delta_pp": 0.007374116768437133
-    },
-    {
-      "sector": "Q",
-      "year": 2029,
-      "GDP_SAR_baseline": 146595015005.1426,
-      "GDP_SAR_scenario": 146595015005.1426,
-      "baseline_pct": 3.513915440602776,
-      "scenario_pct": 3.5185821354073354,
-      "delta_pp": 0.004666694804559501
-    },
-    {
-      "sector": "R",
-      "year": 2029,
-      "GDP_SAR_baseline": 9588631507.309465,
-      "GDP_SAR_scenario": 9588631507.309465,
-      "baseline_pct": 0.22984165120896513,
-      "scenario_pct": 0.23014689499120716,
-      "delta_pp": 0.00030524378224203175
-    },
-    {
-      "sector": "S",
-      "year": 2029,
-      "GDP_SAR_baseline": 29249714056.78907,
-      "GDP_SAR_scenario": 29249714056.78907,
-      "baseline_pct": 0.7011222165621497,
-      "scenario_pct": 0.702053349783964,
-      "delta_pp": 0.0009311332218143731
-    },
-    {
-      "sector": "T",
-      "year": 2029,
-      "GDP_SAR_baseline": 0.0,
-      "GDP_SAR_scenario": 0.0,
-      "baseline_pct": 0.0,
-      "scenario_pct": 0.0,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "U",
-      "year": 2029,
-      "GDP_SAR_baseline": 0.0,
-      "GDP_SAR_scenario": 0.0,
-      "baseline_pct": 0.0,
-      "scenario_pct": 0.0,
-      "delta_pp": 0.0
-    },
-    {
-      "sector": "V",
-      "year": 2029,
-      "GDP_SAR_baseline": 0.0,
-      "GDP_SAR_scenario": 0.0,
-      "baseline_pct": 0.0,
-      "scenario_pct": 0.0,
-      "delta_pp": 0.0
-    },
+  },
+  "sector_breakdown_2030": [
     {
       "sector": "A",
       "year": 2030,
-      "GDP_SAR_baseline": 123043329009.97389,
-      "GDP_SAR_scenario": 123043329009.97389,
-      "baseline_pct": 2.8967827379559092,
-      "scenario_pct": 2.9025578082510566,
-      "delta_pp": 0.005775070295147344
+      "GDP_SAR_baseline": 123043329009.97,
+      "GDP_SAR_scenario": 123043329009.97,
+      "baseline_pct": 2.9,
+      "scenario_pct": 2.9,
+      "delta_pp": -0.0
+    },
+    {
+      "sector": "T",
+      "year": 2030,
+      "GDP_SAR_baseline": 0.0,
+      "GDP_SAR_scenario": 0.0,
+      "baseline_pct": 0.0,
+      "scenario_pct": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "sector": "S",
+      "year": 2030,
+      "GDP_SAR_baseline": 29780766933.99,
+      "GDP_SAR_scenario": 29780766933.99,
+      "baseline_pct": 0.7,
+      "scenario_pct": 0.7,
+      "delta_pp": -0.0
+    },
+    {
+      "sector": "R",
+      "year": 2030,
+      "GDP_SAR_baseline": 9762721084.2,
+      "GDP_SAR_scenario": 9762721084.2,
+      "baseline_pct": 0.23,
+      "scenario_pct": 0.23,
+      "delta_pp": -0.0
+    },
+    {
+      "sector": "Q",
+      "year": 2030,
+      "GDP_SAR_baseline": 149256569373.3,
+      "GDP_SAR_scenario": 149256569373.3,
+      "baseline_pct": 3.51,
+      "scenario_pct": 3.51,
+      "delta_pp": -0.0
+    },
+    {
+      "sector": "P",
+      "year": 2030,
+      "GDP_SAR_baseline": 235849014567.88,
+      "GDP_SAR_scenario": 235849014567.88,
+      "baseline_pct": 5.55,
+      "scenario_pct": 5.55,
+      "delta_pp": -0.0
+    },
+    {
+      "sector": "O",
+      "year": 2030,
+      "GDP_SAR_baseline": 379046452247.23,
+      "GDP_SAR_scenario": 379046452247.23,
+      "baseline_pct": 8.92,
+      "scenario_pct": 8.92,
+      "delta_pp": -0.0
+    },
+    {
+      "sector": "N",
+      "year": 2030,
+      "GDP_SAR_baseline": 45184516019.73,
+      "GDP_SAR_scenario": 45184516019.73,
+      "baseline_pct": 1.06,
+      "scenario_pct": 1.06,
+      "delta_pp": -0.0
+    },
+    {
+      "sector": "M",
+      "year": 2030,
+      "GDP_SAR_baseline": 30208868253.05,
+      "GDP_SAR_scenario": 30208868253.05,
+      "baseline_pct": 0.71,
+      "scenario_pct": 0.71,
+      "delta_pp": -0.0
+    },
+    {
+      "sector": "L",
+      "year": 2030,
+      "GDP_SAR_baseline": 261341746929.95,
+      "GDP_SAR_scenario": 261341746929.95,
+      "baseline_pct": 6.15,
+      "scenario_pct": 6.15,
+      "delta_pp": -0.0
+    },
+    {
+      "sector": "K",
+      "year": 2030,
+      "GDP_SAR_baseline": 171525643947.94,
+      "GDP_SAR_scenario": 171525643947.94,
+      "baseline_pct": 4.04,
+      "scenario_pct": 4.04,
+      "delta_pp": -0.0
+    },
+    {
+      "sector": "J",
+      "year": 2030,
+      "GDP_SAR_baseline": 131832562546.75,
+      "GDP_SAR_scenario": 131832562546.75,
+      "baseline_pct": 3.1,
+      "scenario_pct": 3.1,
+      "delta_pp": -0.0
+    },
+    {
+      "sector": "H",
+      "year": 2030,
+      "GDP_SAR_baseline": 107164210455.63,
+      "GDP_SAR_scenario": 107253410312.45,
+      "baseline_pct": 2.52,
+      "scenario_pct": 2.52,
+      "delta_pp": 0.0
+    },
+    {
+      "sector": "G",
+      "year": 2030,
+      "GDP_SAR_baseline": 374743600072.29,
+      "GDP_SAR_scenario": 374743600072.29,
+      "baseline_pct": 8.82,
+      "scenario_pct": 8.82,
+      "delta_pp": -0.0
+    },
+    {
+      "sector": "F",
+      "year": 2030,
+      "GDP_SAR_baseline": 255079765794.59,
+      "GDP_SAR_scenario": 255079765794.59,
+      "baseline_pct": 6.01,
+      "scenario_pct": 6.0,
+      "delta_pp": -0.0
+    },
+    {
+      "sector": "E",
+      "year": 2030,
+      "GDP_SAR_baseline": 11827980211.73,
+      "GDP_SAR_scenario": 11827980211.73,
+      "baseline_pct": 0.28,
+      "scenario_pct": 0.28,
+      "delta_pp": -0.0
+    },
+    {
+      "sector": "D",
+      "year": 2030,
+      "GDP_SAR_baseline": 46689747358.67,
+      "GDP_SAR_scenario": 46689747358.67,
+      "baseline_pct": 1.1,
+      "scenario_pct": 1.1,
+      "delta_pp": -0.0
+    },
+    {
+      "sector": "C",
+      "year": 2030,
+      "GDP_SAR_baseline": 688673956079.7,
+      "GDP_SAR_scenario": 688673956079.7,
+      "baseline_pct": 16.21,
+      "scenario_pct": 16.21,
+      "delta_pp": -0.0
     },
     {
       "sector": "B",
       "year": 2030,
       "GDP_SAR_baseline": 1121912313927.77,
       "GDP_SAR_scenario": 1121912313927.77,
-      "baseline_pct": 26.41294128365704,
-      "scenario_pct": 26.465598526679123,
-      "delta_pp": 0.05265724302208241
-    },
-    {
-      "sector": "C",
-      "year": 2030,
-      "GDP_SAR_baseline": 688673956079.7047,
-      "GDP_SAR_scenario": 688673956079.7047,
-      "baseline_pct": 16.213303428175166,
-      "scenario_pct": 16.245626517438097,
-      "delta_pp": 0.03232308926293115
-    },
-    {
-      "sector": "D",
-      "year": 2030,
-      "GDP_SAR_baseline": 46689747358.66614,
-      "GDP_SAR_scenario": 46689747358.66614,
-      "baseline_pct": 1.099206720724723,
-      "scenario_pct": 1.101398116026106,
-      "delta_pp": 0.0021913953013830145
-    },
-    {
-      "sector": "E",
-      "year": 2030,
-      "GDP_SAR_baseline": 11827980211.726423,
-      "GDP_SAR_scenario": 11827980211.726423,
-      "baseline_pct": 0.27846360447087565,
-      "scenario_pct": 0.2790187537643964,
-      "delta_pp": 0.0005551492935207403
-    },
-    {
-      "sector": "F",
-      "year": 2030,
-      "GDP_SAR_baseline": 255079765794.59012,
-      "GDP_SAR_scenario": 255079765794.59012,
-      "baseline_pct": 6.005288285850172,
-      "scenario_pct": 6.017260520266994,
-      "delta_pp": 0.011972234416822047
-    },
-    {
-      "sector": "G",
-      "year": 2030,
-      "GDP_SAR_baseline": 374743600072.29285,
-      "GDP_SAR_scenario": 374743600072.29285,
-      "baseline_pct": 8.82250830324069,
-      "scenario_pct": 8.840096990498157,
-      "delta_pp": 0.017588687257466873
-    },
-    {
-      "sector": "H",
-      "year": 2030,
-      "GDP_SAR_baseline": 107164210455.62505,
-      "GDP_SAR_scenario": 107164210455.62505,
-      "baseline_pct": 2.5229440512729076,
-      "scenario_pct": 2.527973831054427,
-      "delta_pp": 0.005029779781519306
-    },
-    {
-      "sector": "I",
-      "year": 2030,
-      "GDP_SAR_baseline": 74661923879.63744,
-      "GDP_SAR_scenario": 66210720645.3245,
-      "baseline_pct": 1.7577496806802115,
-      "scenario_pct": 1.5618924304578752,
-      "delta_pp": -0.19585725022233635
-    },
-    {
-      "sector": "J",
-      "year": 2030,
-      "GDP_SAR_baseline": 131832562546.75444,
-      "GDP_SAR_scenario": 131832562546.75444,
-      "baseline_pct": 3.103705780383876,
-      "scenario_pct": 3.109893375615757,
-      "delta_pp": 0.006187595231881282
-    },
-    {
-      "sector": "K",
-      "year": 2030,
-      "GDP_SAR_baseline": 171525643947.94165,
-      "GDP_SAR_scenario": 171525643947.94165,
-      "baseline_pct": 4.038191493216933,
-      "scenario_pct": 4.046242093433865,
-      "delta_pp": 0.008050600216932047
-    },
-    {
-      "sector": "L",
-      "year": 2030,
-      "GDP_SAR_baseline": 261341746929.9491,
-      "GDP_SAR_scenario": 261341746929.9491,
-      "baseline_pct": 6.152712766350396,
-      "scenario_pct": 6.164978908462454,
-      "delta_pp": 0.012266142112058454
-    },
-    {
-      "sector": "M",
-      "year": 2030,
-      "GDP_SAR_baseline": 30208868253.04902,
-      "GDP_SAR_scenario": 30208868253.04902,
-      "baseline_pct": 0.7112009142854323,
-      "scenario_pct": 0.7126187752869342,
-      "delta_pp": 0.0014178610015018744
-    },
-    {
-      "sector": "N",
-      "year": 2030,
-      "GDP_SAR_baseline": 45184516019.732185,
-      "GDP_SAR_scenario": 45184516019.732185,
-      "baseline_pct": 1.0637693817455356,
-      "scenario_pct": 1.065890128626864,
-      "delta_pp": 0.0021207468813284613
-    },
-    {
-      "sector": "O",
-      "year": 2030,
-      "GDP_SAR_baseline": 379046452247.2302,
-      "GDP_SAR_scenario": 379046452247.2302,
-      "baseline_pct": 8.923809430287768,
-      "scenario_pct": 8.941600073018806,
-      "delta_pp": 0.01779064273103792
-    },
-    {
-      "sector": "P",
-      "year": 2030,
-      "GDP_SAR_baseline": 235849014567.88477,
-      "GDP_SAR_scenario": 235849014567.88477,
-      "baseline_pct": 5.5525428291100605,
-      "scenario_pct": 5.563612463271701,
-      "delta_pp": 0.01106963416164053
-    },
-    {
-      "sector": "Q",
-      "year": 2030,
-      "GDP_SAR_baseline": 149256569373.29877,
-      "GDP_SAR_scenario": 149256569373.29877,
-      "baseline_pct": 3.5139154407309894,
-      "scenario_pct": 3.5209208362049162,
-      "delta_pp": 0.007005395473926868
-    },
-    {
-      "sector": "R",
-      "year": 2030,
-      "GDP_SAR_baseline": 9762721084.202425,
-      "GDP_SAR_scenario": 9762721084.202425,
-      "baseline_pct": 0.22984165122762057,
-      "scenario_pct": 0.2302998670527842,
-      "delta_pp": 0.0004582158251636437
-    },
-    {
-      "sector": "S",
-      "year": 2030,
-      "GDP_SAR_baseline": 29780766933.986813,
-      "GDP_SAR_scenario": 29780766933.986813,
-      "baseline_pct": 0.7011222166336886,
-      "scenario_pct": 0.702519984589668,
-      "delta_pp": 0.0013977679559794565
-    },
-    {
-      "sector": "T",
-      "year": 2030,
-      "GDP_SAR_baseline": 0.0,
-      "GDP_SAR_scenario": 0.0,
-      "baseline_pct": 0.0,
-      "scenario_pct": 0.0,
-      "delta_pp": 0.0
+      "baseline_pct": 26.41,
+      "scenario_pct": 26.41,
+      "delta_pp": -0.0
     },
     {
       "sector": "U",
@@ -1238,709 +208,168 @@
       "baseline_pct": 0.0,
       "scenario_pct": 0.0,
       "delta_pp": 0.0
+    },
+    {
+      "sector": "I",
+      "year": 2030,
+      "GDP_SAR_baseline": 74661923879.64,
+      "GDP_SAR_scenario": 74906014002.23,
+      "baseline_pct": 1.76,
+      "scenario_pct": 1.76,
+      "delta_pp": 0.01
     }
   ],
-  "region_gdp": [
+  "regional_impacts_2030": {
+    "top_negative": [
+      {
+        "region": "ABA",
+        "year": 2030,
+        "GDP_SAR_baseline": 63151525467.43835,
+        "GDP_SAR_scenario": 63151525467.43835,
+        "delta_abs": 0.0,
+        "delta_pct": 0.0
+      },
+      {
+        "region": "AHU",
+        "year": 2030,
+        "GDP_SAR_baseline": 61977705290.676765,
+        "GDP_SAR_scenario": 61977705290.676765,
+        "delta_abs": 0.0,
+        "delta_pct": 0.0
+      },
+      {
+        "region": "AJA",
+        "year": 2030,
+        "GDP_SAR_baseline": 85923636879.35117,
+        "GDP_SAR_scenario": 85923636879.35117,
+        "delta_abs": 0.0,
+        "delta_pct": 0.0
+      }
+    ],
+    "top_positive": [
+      {
+        "region": "AMA",
+        "year": 2030,
+        "GDP_SAR_baseline": 235703091331.4966,
+        "GDP_SAR_scenario": 236036381310.90945,
+        "delta_abs": 333289979.4128418,
+        "delta_pct": 0.14
+      },
+      {
+        "region": "ABA",
+        "year": 2030,
+        "GDP_SAR_baseline": 63151525467.43835,
+        "GDP_SAR_scenario": 63151525467.43835,
+        "delta_abs": 0.0,
+        "delta_pct": 0.0
+      },
+      {
+        "region": "AHU",
+        "year": 2030,
+        "GDP_SAR_baseline": 61977705290.676765,
+        "GDP_SAR_scenario": 61977705290.676765,
+        "delta_abs": 0.0,
+        "delta_pct": 0.0
+      }
+    ]
+  },
+  "yearly_national": [
     {
-      "region": "ABA",
       "year": 2025,
-      "baseline": 57715016335.68834,
-      "scenario": 57715016335.68834,
-      "delta_abs": 0.0,
+      "baseline": 3881924872046,
+      "scenario": 3881924872046,
+      "delta_abs": 0,
       "delta_pct": 0.0
     },
     {
-      "region": "ABA",
       "year": 2026,
-      "baseline": 58764178177.75817,
-      "scenario": 58764178177.75817,
-      "delta_abs": 0.0,
+      "baseline": 3952491731420,
+      "scenario": 3952603716035,
+      "delta_abs": 111984614,
       "delta_pct": 0.0
     },
     {
-      "region": "ABA",
       "year": 2027,
-      "baseline": 59832072548.29192,
-      "scenario": 59832072548.29192,
-      "delta_abs": 0.0,
+      "baseline": 4024318545035,
+      "scenario": 4024483360160,
+      "delta_abs": 164815125,
       "delta_pct": 0.0
     },
     {
-      "region": "ABA",
       "year": 2028,
-      "baseline": 60919033919.69518,
-      "scenario": 60919033919.69518,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
+      "baseline": 4097427809028,
+      "scenario": 4097647096268,
+      "delta_abs": 219287239,
+      "delta_pct": 0.01
     },
     {
-      "region": "ABA",
       "year": 2029,
-      "baseline": 62025402716.02367,
-      "scenario": 62025402716.02367,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
+      "baseline": 4171842421455,
+      "scenario": 4172117855721,
+      "delta_abs": 275434265,
+      "delta_pct": 0.01
     },
     {
-      "region": "ABA",
       "year": 2030,
-      "baseline": 63151525467.43835,
-      "scenario": 63151525467.43835,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AHU",
-      "year": 2025,
-      "baseline": 56642246511.235466,
-      "scenario": 56642246511.235466,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AHU",
-      "year": 2026,
-      "baseline": 57671907203.6628,
-      "scenario": 57671907203.6628,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AHU",
-      "year": 2027,
-      "baseline": 58719952234.279625,
-      "scenario": 58719952234.279625,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AHU",
-      "year": 2028,
-      "baseline": 59786709866.94138,
-      "scenario": 59786709866.94138,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AHU",
-      "year": 2029,
-      "baseline": 60872514190.763885,
-      "scenario": 60872514190.763885,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AHU",
-      "year": 2030,
-      "baseline": 61977705290.676765,
-      "scenario": 61977705290.676765,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AJA",
-      "year": 2025,
-      "baseline": 78526750854.96907,
-      "scenario": 78526750854.96907,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AJA",
-      "year": 2026,
-      "baseline": 79954234990.68874,
-      "scenario": 79954234990.68874,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AJA",
-      "year": 2027,
-      "baseline": 81407206510.67204,
-      "scenario": 81407206510.67204,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AJA",
-      "year": 2028,
-      "baseline": 82886120496.31267,
-      "scenario": 82886120496.31267,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AJA",
-      "year": 2029,
-      "baseline": 84391440125.20628,
-      "scenario": 84391440125.20628,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AJA",
-      "year": 2030,
-      "baseline": 85923636879.35117,
-      "scenario": 85923636879.35117,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AMA",
-      "year": 2025,
-      "baseline": 215412179940.72357,
-      "scenario": 215412179940.72357,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AMA",
-      "year": 2026,
-      "baseline": 219328010741.69824,
-      "scenario": 219328010741.69824,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AMA",
-      "year": 2027,
-      "baseline": 223313757767.28027,
-      "scenario": 223313757767.28027,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AMA",
-      "year": 2028,
-      "baseline": 227370669339.55627,
-      "scenario": 227370669339.55627,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AMA",
-      "year": 2029,
-      "baseline": 231500016095.0003,
-      "scenario": 231500016095.0003,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AMA",
-      "year": 2030,
-      "baseline": 235703091331.4966,
-      "scenario": 235703091331.4966,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AQA",
-      "year": 2025,
-      "baseline": 182799977386.51483,
-      "scenario": 182799977386.51483,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AQA",
-      "year": 2026,
-      "baseline": 186122973256.07584,
-      "scenario": 186122973256.07584,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AQA",
-      "year": 2027,
-      "baseline": 189505300411.98843,
-      "scenario": 189505300411.98843,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AQA",
-      "year": 2028,
-      "baseline": 192948018197.0499,
-      "scenario": 192948018197.0499,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AQA",
-      "year": 2029,
-      "baseline": 196452204889.0441,
-      "scenario": 196452204889.0441,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "AQA",
-      "year": 2030,
-      "baseline": 200018957979.10388,
-      "scenario": 200018957979.10388,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "ARI",
-      "year": 2025,
-      "baseline": 1076202683789.0795,
-      "scenario": 1076202683789.0795,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "ARI",
-      "year": 2026,
-      "baseline": 1095766236927.5409,
-      "scenario": 1095766236927.5409,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "ARI",
-      "year": 2027,
-      "baseline": 1115679092551.3916,
-      "scenario": 1115679092551.3916,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "ARI",
-      "year": 2028,
-      "baseline": 1135947487409.3782,
-      "scenario": 1135947487409.3782,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "ARI",
-      "year": 2029,
-      "baseline": 1156577769662.0063,
-      "scenario": 1156577769662.0063,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "ARI",
-      "year": 2030,
-      "baseline": 1177576400498.1282,
-      "scenario": 1177576400498.1282,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "ASH",
-      "year": 2025,
-      "baseline": 616198984856.1543,
-      "scenario": 616198984856.1543,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "ASH",
-      "year": 2026,
-      "baseline": 627400445119.5297,
-      "scenario": 627400445119.5297,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "ASH",
-      "year": 2027,
-      "baseline": 638801904691.0839,
-      "scenario": 638801904691.0839,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "ASH",
-      "year": 2028,
-      "baseline": 650406934589.7877,
-      "scenario": 650406934589.7877,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "ASH",
-      "year": 2029,
-      "baseline": 662219169509.9948,
-      "scenario": 662219169509.9948,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "ASH",
-      "year": 2030,
-      "baseline": 674242309071.6464,
-      "scenario": 674242309071.6464,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "ASI",
-      "year": 2025,
-      "baseline": 264974145641.6593,
-      "scenario": 264974145641.6593,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "ASI",
-      "year": 2026,
-      "baseline": 269790929543.07693,
-      "scenario": 269790929543.07693,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "ASI",
-      "year": 2027,
-      "baseline": 274693715975.64508,
-      "scenario": 274693715975.64508,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "ASI",
-      "year": 2028,
-      "baseline": 279684040480.60706,
-      "scenario": 279684040480.60706,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "ASI",
-      "year": 2029,
-      "baseline": 284763466020.3097,
-      "scenario": 284763466020.3097,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "ASI",
-      "year": 2030,
-      "baseline": 289933583469.40125,
-      "scenario": 289933583469.40125,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "HAI",
-      "year": 2025,
-      "baseline": 108778859787.27794,
-      "scenario": 108778859787.27794,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "HAI",
-      "year": 2026,
-      "baseline": 110756276342.38646,
-      "scenario": 110756276342.38646,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "HAI",
-      "year": 2027,
-      "baseline": 112768999184.59213,
-      "scenario": 112768999184.59213,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "HAI",
-      "year": 2028,
-      "baseline": 114817658718.99455,
-      "scenario": 114817658718.99455,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "HAI",
-      "year": 2029,
-      "baseline": 116902896574.23007,
-      "scenario": 116902896574.23007,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "HAI",
-      "year": 2030,
-      "baseline": 119025365846.89153,
-      "scenario": 119025365846.89153,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "JAZ",
-      "year": 2025,
-      "baseline": 186876502713.04794,
-      "scenario": 186876502713.04794,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "JAZ",
-      "year": 2026,
-      "baseline": 190273602930.44266,
-      "scenario": 190273602930.44266,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "JAZ",
-      "year": 2027,
-      "baseline": 193731357584.80066,
-      "scenario": 193731357584.80066,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "JAZ",
-      "year": 2028,
-      "baseline": 197250849585.65952,
-      "scenario": 197250849585.65952,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "JAZ",
-      "year": 2029,
-      "baseline": 200833181291.76205,
-      "scenario": 200833181291.76205,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "JAZ",
-      "year": 2030,
-      "baseline": 204479474654.52698,
-      "scenario": 204479474654.52698,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "MAK",
-      "year": 2025,
-      "baseline": 878813036852.0337,
-      "scenario": 878813036852.0337,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "MAK",
-      "year": 2026,
-      "baseline": 894788378462.0806,
-      "scenario": 894788378462.0806,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "MAK",
-      "year": 2027,
-      "baseline": 911048955989.707,
-      "scenario": 911048955989.707,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "MAK",
-      "year": 2028,
-      "baseline": 927599862139.5403,
-      "scenario": 924881838041.0641,
-      "delta_abs": -2718024098.4761963,
-      "delta_pct": -0.293016871758366
-    },
-    {
-      "region": "MAK",
-      "year": 2029,
-      "baseline": 944446280777.003,
-      "scenario": 938913166981.6094,
-      "delta_abs": -5533113795.393677,
-      "delta_pct": -0.5858579686333819
-    },
-    {
-      "region": "MAK",
-      "year": 2030,
-      "baseline": 961593488123.6794,
-      "scenario": 953142284889.3666,
-      "delta_abs": -8451203234.312866,
-      "delta_pct": -0.8788748404279833
-    },
-    {
-      "region": "NAJ",
-      "year": 2025,
-      "baseline": 69300930396.92313,
-      "scenario": 69300930396.92313,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "NAJ",
-      "year": 2026,
-      "baseline": 70560704650.1279,
-      "scenario": 70560704650.1279,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "NAJ",
-      "year": 2027,
-      "baseline": 71842971869.36742,
-      "scenario": 71842971869.36742,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "NAJ",
-      "year": 2028,
-      "baseline": 73148133662.36035,
-      "scenario": 73148133662.36035,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "NAJ",
-      "year": 2029,
-      "baseline": 74476598802.3603,
-      "scenario": 74476598802.3603,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "NAJ",
-      "year": 2030,
-      "baseline": 75828783369.2874,
-      "scenario": 75828783369.2874,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "TAB",
-      "year": 2025,
-      "baseline": 89683556980.94945,
-      "scenario": 89683556980.94945,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "TAB",
-      "year": 2026,
-      "baseline": 91313853075.5344,
-      "scenario": 91313853075.5344,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "TAB",
-      "year": 2027,
-      "baseline": 92973257716.03058,
-      "scenario": 92973257716.03058,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "TAB",
-      "year": 2028,
-      "baseline": 94662290622.36177,
-      "scenario": 94662290622.36177,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "TAB",
-      "year": 2029,
-      "baseline": 96381480801.82578,
-      "scenario": 96381480801.82578,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "TAB",
-      "year": 2030,
-      "baseline": 98131366712.38818,
-      "scenario": 98131366712.38818,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "TOTAL",
-      "year": 2025,
-      "baseline": 3881924872046.2563,
-      "scenario": 3881924872046.2563,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "TOTAL",
-      "year": 2026,
-      "baseline": 3952491731420.603,
-      "scenario": 3952491731420.603,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "TOTAL",
-      "year": 2027,
-      "baseline": 4024318545035.1304,
-      "scenario": 4024318545035.1304,
-      "delta_abs": 0.0,
-      "delta_pct": 0.0
-    },
-    {
-      "region": "TOTAL",
-      "year": 2028,
-      "baseline": 4097427809028.2446,
-      "scenario": 4094709784929.7686,
-      "delta_abs": -2718024098.476074,
-      "delta_pct": -0.06633488679134746
-    },
-    {
-      "region": "TOTAL",
-      "year": 2029,
-      "baseline": 4171842421455.5303,
-      "scenario": 4166309307660.1367,
-      "delta_abs": -5533113795.393555,
-      "delta_pct": -0.13262998062767398
-    },
-    {
-      "region": "TOTAL",
-      "year": 2030,
-      "baseline": 4247585688694.016,
-      "scenario": 4239134485459.7036,
-      "delta_abs": -8451203234.3125,
-      "delta_pct": -0.19896486742592234
+      "baseline": 4247585688694,
+      "scenario": 4247918978673,
+      "delta_abs": 333289979,
+      "delta_pct": 0.01
     }
   ],
   "trace": {
-    "reasoning": "The tourism sector is primarily represented by 'I' (Accommodation & Food). A halving translates to a -50% impact. Mecca (MAK) is the specific region targeted. I've applied this to Workforce, as reduced tourism will directly affect employment, and to Investments, as it is likely to deter investments in this sector. The impact is distributed linearly from 2028 to 2030.",
+    "reasoning": "Carbon neutrality requirements will drive investment in green technologies and improved energy efficiency in Alula's hotels. This will increase investments and productivity but also slightly decrease workforce due to automation. The impact is focused on sector I (Accommodation & Food) and the Alula region (AMA). The effects ramp up starting in 2026.",
     "rules": [
       {
-        "region": "MAK",
-        "sector": "I",
-        "kpi": "Workforce",
-        "years": {
-          "2025": 0,
-          "2026": 0,
-          "2027": 0,
-          "2028": -16.67,
-          "2029": -33.33,
-          "2030": -50
-        }
-      },
-      {
-        "region": "MAK",
+        "region": "AMA",
         "sector": "I",
         "kpi": "Investments",
         "years": {
           "2025": 0,
-          "2026": 0,
-          "2027": 0,
-          "2028": -16.67,
-          "2029": -33.33,
-          "2030": -50
+          "2026": 3,
+          "2027": 4,
+          "2028": 5,
+          "2029": 6,
+          "2030": 7
+        }
+      },
+      {
+        "region": "AMA",
+        "sector": "I",
+        "kpi": "Productivity",
+        "years": {
+          "2025": 0,
+          "2026": 2,
+          "2027": 3,
+          "2028": 4,
+          "2029": 5,
+          "2030": 6
+        }
+      },
+      {
+        "region": "AMA",
+        "sector": "I",
+        "kpi": "Workforce",
+        "years": {
+          "2025": 0,
+          "2026": -1,
+          "2027": -1.5,
+          "2028": -2,
+          "2029": -2.5,
+          "2030": -3
+        }
+      },
+      {
+        "region": "AMA",
+        "sector": "H",
+        "kpi": "Productivity",
+        "years": {
+          "2025": 0,
+          "2026": 0.5,
+          "2027": 0.75,
+          "2028": 1,
+          "2029": 1.25,
+          "2030": 1.5
         }
       }
     ]

@@ -75,7 +75,12 @@ Najran - NAJ
 Tabuk - TAB
  where the impact is expected to be most significant. Use only the 3-letter code.
 
-Make sure to use more than one rule object if the policy affects multiple regions or sectors. 
+Make sure to use more than one rule object if the policy affects multiple regions or sectors.
+Make sure to think about the interaction of sectors. If the mining/oil gas sectors is affected, transportation and manufacturing sectors are also likely to be affected.
+Your analysis should be based on the following:
+Policy decisions have a direct impact on the economy, and the impact is expected to be significant.
+these impacts are reflected in the productivity, workforce, and investment KPIs.
+The impact is expected to be significant, and the analysis should reflect this.
 ════════════════════════════════════════════════════════════════════
 OUTPUT JSON SHAPE  (return **exactly** this, nothing extra)
 ════════════════════════════════════════════════════════════════════
