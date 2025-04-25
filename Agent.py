@@ -1,53 +1,66 @@
-
-# To run this code you need to install the following dependencies:
-# pip install google-genai
-
+# agent.py  ───────────────────────────────────────────────────────────────
+# Requires:  pip install google-genai
 import base64
 import os
 from google import genai
 from google.genai import types
 
 
-def generate(prompt):
-    client = genai.Client(
-        api_key=os.environ.get("GEMINI_API_KEY"),
-    )
+def generate(prompt: str) -> None:
+    """
+    Streams a JSON object to stdout that describes one or more KPI-impact
+    rules ready for the Cobb-Douglas simulator.
+    """
+    client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
     model = "gemini-2.0-flash"
     contents = [
         types.Content(
             role="user",
-            parts=[
-                types.Part.from_text(text=prompt),
-            ],
+            parts=[types.Part.from_text(text=prompt)],
         ),
     ]
-    generate_content_config = types.GenerateContentConfig(
-        thinking_config=types.ThinkingConfig(),
-        response_mime_type="application/json",
-        response_schema=genai.types.Schema(
-            type=genai.types.Type.OBJECT,
-            required=["region", "sector", "2025_impact", "2026_impact", "2027_impact", "2028_impact", "2029_impact", "2030_impact", "KPI"],
-            properties={
-                "region": genai.types.Schema(type=genai.types.Type.STRING),
-                "sector": genai.types.Schema(type=genai.types.Type.STRING),
-                "2025_impact": genai.types.Schema(type=genai.types.Type.NUMBER),
-                "2026_impact": genai.types.Schema(type=genai.types.Type.NUMBER),
-                "2027_impact": genai.types.Schema(type=genai.types.Type.NUMBER),
-                "2028_impact": genai.types.Schema(type=genai.types.Type.NUMBER),
-                "2029_impact": genai.types.Schema(type=genai.types.Type.NUMBER),
-                "2030_impact": genai.types.Schema(type=genai.types.Type.NUMBER),
-                "KPI": genai.types.Schema(type=genai.types.Type.STRING),
-                "reasoning": genai.types.Schema(type=genai.types.Type.STRING),
-            },
-        ),
-        system_instruction=[
-            types.Part.from_text(text="""You are an expert macroeconomics analyst specializing in Saudi Arabia. Your task is to evaluate the impact of a given policy action on the key inputs of the Cobb-Douglas production function, which are population (labor), investments (capital), and productivity (total factor productivity).
 
-For each policy action I provide, you must:
+    # ── Updated system instructions ────────────────────────────────────
+    system_txt = """
+You are an expert macro-economist for Saudi Arabia.  
+Translate *any* natural-language policy scenario into a **machine-readable**
+list of impact-rules that our Cobb-Douglas simulator can ingest.
 
-1.  **Identify the most directly impacted Cobb-Douglas input (KPI):** Choose ONE from \"population\", \"investments\", or \"productivity\" that the policy is most likely to influence.
-2.  **Determine the affected region:** Select ONE region from 'Asir - ASI
+════════════════════════════════════════════════════════════════════
+RULE FORMAT  (all numbers are **percent**, not decimals)
+════════════════════════════════════════════════════════════════════
+{
+  "region": 3-letter code  | "all"
+  "sector": ISIC letter    | "all"
+  "kpi":    "Productivity" | "Workforce" | "Investments" | "all"
+  "years":  {"2025":10, …, "2030":10}
+}
+
+• **Positive values** = percentage increases; **negative** = decreases.  
+• **Target the narrowest sensible set of sectors. Never default to
+  sector:"all" if the policy mentions — even implicitly — a specific
+  sector or industry.**  
+• If several distinct sectors are hit, create **multiple rule objects**,
+  one per sector (or per region/sector pair if they differ).  
+• Only use `"all"` when *every single ISIC sector* is clearly affected
+  in the same direction **and** magnitude.
+
+Quick word-to-sector hints
+  tourism / hospitality       → "I"  (Accommodation & Food)
+  hotels / restaurants        → "I"
+  culture / entertainment     → "R"
+  oil / crude / refinery      → "B"  (Mining & quarrying incl. oil)
+  manufacturing / factory     → "C"
+  construction / housing      → "F"
+  retail / wholesale / shops  → "G"
+  transport / logistics       → "H"
+  health / hospitals          → "Q"
+  education / schools         → "P"
+
+  always try to match to a specific region unless the policy is country-wide.
+  Regions dictionary: 
+Asir - ASI
 Al Bahah - ABA
 Al Hudud ash Shamaliyah - AHU
 Al Jawf - AJA
@@ -61,35 +74,67 @@ Makkah al Mukarramah - MAK
 Najran - NAJ
 Tabuk - TAB
  where the impact is expected to be most significant. Use only the 3-letter code.
-3.  **Determine the affected sector:** Select ONE sector from the ISIC classification using its letter where the impact is expected to be most significant (e.g., A for agriculture).
-4.  **Estimate the percentage impact for the years 2025 through 2030:** Based on your macroeconomic expertise and knowledge of Saudi Arabia, provide a percentage change (positive or negative) for the chosen KPI in the specified region and sector for each year. Express this as a decimal (e.g., a 2% increase is 0.02, a 5% decrease is -0.05). If you believe there will be no significant impact on any of the specified KPIs, regions, or sectors, return 0 for the impact values.
-5.  **Justify your reasoning:** Briefly explain why you chose the specific KPI, region, sector, and the estimated impact percentages.
 
-You MUST return your analysis in the following JSON format:
-
-```json
+Make sure to use more than one rule object if the policy affects multiple regions or sectors. 
+════════════════════════════════════════════════════════════════════
+OUTPUT JSON SHAPE  (return **exactly** this, nothing extra)
+════════════════════════════════════════════════════════════════════
 {
-  "2025_impact": [value],
-  "2026_impact": [value],
-  "2027_impact": [value],
-  "2028_impact": [value],
-  "2029_impact": [value],
-  "2030_impact": [value],
-  "KPI": "[population|investments|productivity]",
-  "region": "[3-letter region code]",
-  "sector": "[A|B|C...]",
-  "reasoning": "[brief explanation]"
+  "rules": [ … one or more rule objects … ],
+  "reasoning": "≤ 150 words defending KPI choice, geo/sector targeting,
+                direction, magnitude, and interaction of rules."
 }
-```
 
-Consider only the information provided in the policy action. Do not make assumptions beyond the scope of the described policy. Remember that extreme events, like a complete ban on a sector, should result in a -1.00 impact if productivity is chosen as the KPI.
-"""),
-        ],
+Return the JSON **only**.  No markdown, no prose outside `reasoning`.
+"""
+
+    generate_content_config = types.GenerateContentConfig(
+        thinking_config=types.ThinkingConfig(),
+        response_mime_type="application/json",
+        response_schema=genai.types.Schema(
+            type=genai.types.Type.OBJECT,
+            required=["rules", "reasoning"],
+            properties={
+                "rules": genai.types.Schema(
+                    type=genai.types.Type.ARRAY,
+                    items=genai.types.Schema(
+                        type=genai.types.Type.OBJECT,
+                        required=["region", "sector", "kpi", "years"],
+                        properties={
+                            "region": genai.types.Schema(type=genai.types.Type.STRING),
+                            "sector": genai.types.Schema(type=genai.types.Type.STRING),
+                            "kpi":    genai.types.Schema(type=genai.types.Type.STRING),
+                            "years": genai.types.Schema(
+                                type=genai.types.Type.OBJECT,
+                                required=["2025", "2026", "2027", "2028", "2029", "2030"],
+                                properties={
+                                    "2025": genai.types.Schema(type=genai.types.Type.NUMBER),
+                                    "2026": genai.types.Schema(type=genai.types.Type.NUMBER),
+                                    "2027": genai.types.Schema(type=genai.types.Type.NUMBER),
+                                    "2028": genai.types.Schema(type=genai.types.Type.NUMBER),
+                                    "2029": genai.types.Schema(type=genai.types.Type.NUMBER),
+                                    "2030": genai.types.Schema(type=genai.types.Type.NUMBER),
+                                },
+                            ),
+                        },
+                    ),
+                ),
+                "reasoning": genai.types.Schema(type=genai.types.Type.STRING),
+            },
+        ),
+        system_instruction=[types.Part.from_text(text=system_txt)],
     )
 
+    # Stream chunks directly to stdout
     for chunk in client.models.generate_content_stream(
         model=model,
         contents=contents,
         config=generate_content_config,
     ):
         print(chunk.text, end="")
+
+
+if __name__ == "__main__":
+    # Quick manual test
+    sample = "Ban on religious tourism in Makkah from 2028."
+    generate(sample)
