@@ -1,6 +1,4 @@
-streamlit
-numpy 
-pandas
+
 google-genai
 typing-extensions
 argparse
