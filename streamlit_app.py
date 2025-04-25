@@ -39,7 +39,7 @@ st.title("Saudi GDP Scenario Simulator")
 prompt = st.text_area("Describe the policy you want to test:",
                       value=st.session_state.get("prompt",""),
                       height=110,
-                      placeholder="e.g. Oil investments fall 50 % by 2030")
+                      placeholder="e.g. ICT workforce doubles in Riyadh by 2030")
 run_btn = st.button("🚀 Run Scenario", use_container_width=True,
                     disabled=not prompt.strip())
 
@@ -75,17 +75,13 @@ if "payload" in st.session_state:
     k4.metric("CAGR Base 25-30", f"{nat['cagr_baseline']:+.2f}%")
     k5.metric("CAGR Scen 25-30", f"{nat['cagr_scenario']:+.2f}%")
 
-
     tab_ov, tab_reg, tab_dl = st.tabs(
         ["📊 Overview", "📍 Regional Impact", "📤 Downloads & Trace"]
     )
-    
+
     # ─── OVERVIEW ────────────────────────────────────────────────────
     with tab_ov:
-        # LLM rationale
-        #st.markdown("#### Model rationale")
         st.info(p["trace"]["reasoning"])
-
         # national line
         yr = pd.DataFrame(p["yearly_national"])
         yr["year"] = yr["year"].astype(str)
@@ -131,8 +127,7 @@ if "payload" in st.session_state:
         )
         st.altair_chart(bar, use_container_width=True)
 
-        
-
+   
     # ─── REGIONAL IMPACT ─────────────────────────────────────────────
     with tab_reg:
         # rebuild full region list from CSV for robustness

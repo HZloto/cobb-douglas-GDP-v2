@@ -1,40 +1,40 @@
 {
-  "prompt": "From 2026 onwards hotels in the alula region must be carbon neutral",
+  "prompt": "Oil prices drop to 20 USD by 2030",
   "agent_output": {
-    "reasoning": "Carbon neutrality requirements will drive investment in green technologies and improved energy efficiency in Alula's hotels. This will increase investments and productivity but also slightly decrease workforce due to automation. The impact is focused on sector I (Accommodation & Food) and the Alula region (AMA). The effects ramp up starting in 2026.",
+    "reasoning": "The drop in oil prices significantly impacts Saudi Arabia's economy, necessitating adjustments across multiple sectors. The primary impact is on the mining sector (B), with reduced investments due to lower profitability. This decline affects related sectors like manufacturing (C), construction (F) and transportation (H). Workforce adjustments are also likely. The negative impact is staged over time, reflecting the gradual adaptation to the new price level. All regions are assumed to be impacted by this policy.",
     "rules": [
       {
-        "region": "AMA",
-        "sector": "I",
+        "region": "all",
+        "sector": "B",
         "kpi": "Investments",
         "years": {
-          "2025": 0,
-          "2026": 3,
-          "2027": 4,
-          "2028": 5,
-          "2029": 6,
-          "2030": 7
+          "2025": -5,
+          "2026": -10,
+          "2027": -15,
+          "2028": -20,
+          "2029": -25,
+          "2030": -30
         }
       },
       {
-        "region": "AMA",
-        "sector": "I",
-        "kpi": "Productivity",
-        "years": {
-          "2025": 0,
-          "2026": 2,
-          "2027": 3,
-          "2028": 4,
-          "2029": 5,
-          "2030": 6
-        }
-      },
-      {
-        "region": "AMA",
-        "sector": "I",
+        "region": "all",
+        "sector": "B",
         "kpi": "Workforce",
         "years": {
-          "2025": 0,
+          "2025": -1,
+          "2026": -2,
+          "2027": -3,
+          "2028": -4,
+          "2029": -5,
+          "2030": -6
+        }
+      },
+      {
+        "region": "all",
+        "sector": "C",
+        "kpi": "Productivity",
+        "years": {
+          "2025": -0.5,
           "2026": -1,
           "2027": -1.5,
           "2028": -2,
@@ -43,16 +43,29 @@
         }
       },
       {
-        "region": "AMA",
+        "region": "all",
+        "sector": "F",
+        "kpi": "Productivity",
+        "years": {
+          "2025": -0.25,
+          "2026": -0.5,
+          "2027": -0.75,
+          "2028": -1,
+          "2029": -1.25,
+          "2030": -1.5
+        }
+      },
+      {
+        "region": "all",
         "sector": "H",
         "kpi": "Productivity",
         "years": {
-          "2025": 0,
-          "2026": 0.5,
-          "2027": 0.75,
-          "2028": 1,
-          "2029": 1.25,
-          "2030": 1.5
+          "2025": -0.25,
+          "2026": -0.5,
+          "2027": -0.75,
+          "2028": -1,
+          "2029": -1.25,
+          "2030": -1.5
         }
       }
     ]
