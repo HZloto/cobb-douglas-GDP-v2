@@ -14,7 +14,7 @@ from typing import Any, Dict, List
 
 import pandas as pd
 
-import agent           # LLM interface → JSON rules
+import cd_agent           # LLM interface → JSON rules
 import baseline_model  # computes raw Cobb‑Douglas baseline
 import legacy.run_scenario as run_scenario    # adds spillovers & runs scenarios
 
@@ -46,7 +46,7 @@ def _capture_rules(prompt: str) -> List[Dict[str, Any]]:
     """Call LLM agent and return the rule list."""
     buf = io.StringIO()
     with redirect_stdout(buf):
-        agent.generate(prompt)
+        cd_agent.generate(prompt)
     raw = buf.getvalue().strip()
     data = json.loads(raw)  # will raise JSONDecodeError if malformed
     if "rules" not in data:

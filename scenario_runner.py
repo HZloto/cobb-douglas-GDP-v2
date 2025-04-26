@@ -27,7 +27,7 @@ from typing import Dict, List, Any
 import numpy as np
 import pandas as pd
 
-import agent                    # local module – Streams Gemini JSON
+import cd_agent                    # local module – Streams Gemini JSON
 import baseline_model as bm     # local module – Cobb-Douglas helpers
 
 # ────────────────────────────────────────────────────────────────── constants
@@ -39,7 +39,7 @@ def capture_agent_json(prompt: str) -> Dict[str, Any]:
     """Call agent.generate(prompt) and return the exact JSON it streams."""
     buf = io.StringIO()
     with contextlib.redirect_stdout(buf):
-        agent.generate(prompt)
+        cd_agent.generate(prompt)
     raw = buf.getvalue().strip()
 
     try:
