@@ -281,9 +281,78 @@ def main(input_dir: str = "inputs") -> None:
         print("   •", fn)
 
 
-# ──────────────────────────────────────────────────────────────── entry-point
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Run GDP baseline + scenario impact analysis.")
-    parser.add_argument("-i", "--input_dir", default="inputs",
-                        help="Folder containing input_data.csv (default: inputs/)")
-    main(parser.parse_args().input_dir)
+def run_scenario(prompt: str, input_dir: str = "inputs", output_dir: str = "outputs") -> Dict[str, Any]:
+    """
+    Runs the GDP scenario based on the given prompt.
+    Generates output files (CSV, trace.json) and returns the executive payload.
+    Raises FileNotFoundError if input data is missing.
+    Raises Exception for other errors during execution.
+    """
+    print(f"\n· Running scenario for prompt: '{prompt}'")
+    print("· Generating impact-rules with Gemini …")
+    try:
+        agent_json = capture_agent_json(prompt) # Assuming capture_agent_json is defined elsewhere
+    except Exception as e:
+        print(f"[ERROR] Agent generation failed: {e}", file=sys.stderr)
+        raise RuntimeError(f"Agent generation failed: {e}") from e # Raise specific error
+
+    rules, reasoning = agent_json.get("rules", []), agent_json.get("reasoning", "No reasoning provided.") # Handle potential missing keys
+
+    kpi_csv = os.path.join(input_dir, "input_data.csv")
+    if not os.path.exists(kpi_csv):
+        print(f"[ERROR] KPI file not found: {kpi_csv}", file=sys.stderr)
+        raise FileNotFoundError(f"Input data file not found: {kpi_csv}. Please ensure 'inputs/input_data.csv' exists.")
+
+    try:
+        # ---------------- Baseline
+        print("· Computing baseline GDP …")
+        kpis_wide = bm.load_kpis(kpi_csv) # Assuming bm is baseline_model
+        sec_base  = bm.compute_sector_gdp(kpis_wide)
+        reg_base  = bm.aggregate_region(sec_base)
+        nat_base  = bm.aggregate_country(reg_base)
+
+        # ---------------- Scenario
+        print("· Applying rules & computing scenario GDP …")
+        kpis_scn  = apply_rules(kpis_wide, rules) # Assuming apply_rules is defined elsewhere
+        sec_scn   = bm.compute_sector_gdp(kpis_scn)
+        reg_scn   = bm.aggregate_region(sec_scn) # Corrected
+        nat_scn   = bm.aggregate_country(reg_scn)
+
+        # ---------------- Analytics
+        print("· Computing analytics …")
+        nat_yearly     = compare_nat(nat_base, nat_scn) # Assuming compare_nat is defined elsewhere
+        sector_summary = make_sector_summary(sec_base, sec_scn, nat_base, nat_scn) # Assuming make_sector_summary is defined elsewhere
+        topline_gdp    = make_topline_gdp(reg_base, reg_scn) # Assuming make_topline_gdp is defined elsewhere
+
+        # ---------------- Save CSVs + trace
+        print(f"· Saving output files to '{output_dir}' …")
+        os.makedirs(output_dir, exist_ok=True)
+        nat_yearly.to_csv   (f"{output_dir}/gdp_impact_summary.csv", index=False)
+        sector_summary.to_csv(f"{output_dir}/sector_summary.csv", index=False)
+        topline_gdp.to_csv   (f"{output_dir}/topline_gdp.csv",  index=False)
+        with open(f"{output_dir}/trace.json", "w", encoding="utf-8") as f:
+            json.dump({"prompt": prompt, "agent_output": agent_json},
+                      f, indent=2, ensure_ascii=False)
+
+        # ---------------- Build & return frontend payload
+        print("· Building frontend payload …")
+        meta = {
+            "run_id": datetime.now(timezone.utc).isoformat(),
+            "prompt": prompt,
+            "model": "gemini-2.0-flash", # Or whatever model you are using
+            "alpha": bm.ALPHA, # Assuming ALPHA is a constant in baseline_model
+            "hours_per_worker": bm.HOURS_PER_WORKER # Assuming HOURS_PER_WORKER is a constant
+        }
+        exec_payload = build_frontend_payload(meta,
+                                              nat_yearly,
+                                              sector_summary,
+                                              topline_gdp,
+                                              agent_json)
+
+        print("✔ Scenario run complete.")
+        return exec_payload
+
+    except Exception as e:
+        print(f"[ERROR] An error occurred during scenario computation: {e}", file=sys.stderr)
+        raise RuntimeError(f"Scenario computation failed: {e}") from e # Catch other errors
+

@@ -1,3 +1,6 @@
 google-genai
 typing-extensions
 argparse
+numpy
+streamlit
+pandas
