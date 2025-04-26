@@ -1,19 +1,19 @@
 {
   "prompt": "general workforce is reduced by 30% by 2030 due to AI but productivity is 10% higher.",
   "agent_output": {
-    "reasoning": "The policy directly impacts the workforce and productivity across all sectors in Saudi Arabia. The workforce reduction is modeled as a negative percentage change, while the productivity increase is modeled as a positive percentage change. This automation transformation is likely to affect all sectors, thus the use of 'all' for both region and sector in these rules. The impact is gradual over the years, linearly interpolated from 2025 to 2030. A strong labor reduction calls for increased productivity.",
+    "reasoning": "The policy directly impacts the workforce and productivity across all sectors due to the broad nature of AI implementation. A negative impact on workforce is observed, with a positive impact in productivity. Workforce reduction of 30% by 2030 is implemented gradually. Gradual increase in productivity is assumed with the adoption of AI with an overall impact of 10%.",
     "rules": [
       {
         "region": "all",
         "sector": "all",
         "kpi": "Workforce",
         "years": {
-          "2025": -5.0,
-          "2026": -10.0,
-          "2027": -15.0,
-          "2028": -20.0,
-          "2029": -25.0,
-          "2030": -30.0
+          "2025": -5,
+          "2026": -5,
+          "2027": -5,
+          "2028": -5,
+          "2029": -5,
+          "2030": -5
         }
       },
       {
@@ -22,11 +22,11 @@
         "kpi": "Productivity",
         "years": {
           "2025": 1.67,
-          "2026": 3.33,
-          "2027": 5.0,
-          "2028": 6.67,
-          "2029": 8.33,
-          "2030": 10.0
+          "2026": 1.67,
+          "2027": 1.67,
+          "2028": 1.67,
+          "2029": 1.67,
+          "2030": 1.67
         }
       }
     ]

@@ -24,7 +24,7 @@ import sys
 from datetime import datetime, timezone
 from typing import Dict, List, Any
 
-#import numpy as np
+import numpy as np
 import pandas as pd
 
 import agent                    # local module – Streams Gemini JSON
