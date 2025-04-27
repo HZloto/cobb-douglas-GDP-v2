@@ -8,6 +8,7 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 import numpy as np # <-- Keep numpy as it's used by pandas and potentially baseline_model/apply_rules
+import pydeck as pdk
 
 # Import the main function from your scenario_runner script
 # Make sure scenario_runner.py, agent.py, and baseline_model.py are in the same directory
@@ -48,26 +49,54 @@ REGION_MAP = {
     # extend as needed
 }
 
+# Add coordinates for each region for the map visualization
+REGION_COORDINATES = {
+    "ARI": {"lat": 24.6877, "lon": 46.7219},  # Riyadh
+    "MAK": {"lat": 21.3891, "lon": 39.8579},  # Makkah
+    "ASH": {"lat": 26.3927, "lon": 50.1815},  # Eastern Province (Dammam)
+    "AHU": {"lat": 30.9991, "lon": 41.0209},  # Northern Borders
+    "ABA": {"lat": 18.2164, "lon": 42.5053},  # Al Bahah
+    "NAJ": {"lat": 17.4924, "lon": 44.1277},  # Najran
+    "AJA": {"lat": 29.8825, "lon": 40.1000},  # Al Jawf
+    "AMA": {"lat": 24.5247, "lon": 39.5692},  # Madinah
+    "AQA": {"lat": 26.3088, "lon": 43.7668},  # Al-Qasim
+    "ASI": {"lat": 18.2237, "lon": 42.5043},  # Asir
+    "HAI": {"lat": 27.5202, "lon": 41.7207},  # Ha'il
+    "JAZ": {"lat": 16.8894, "lon": 42.5631},  # Jazan
+    "TAB": {"lat": 28.3998, "lon": 36.5719},  # Tabuk
+}
+
 st.set_page_config(page_title="Saudi GDP Scenario Simulator",
                    layout="wide", page_icon="📈")
 st.title("Saudi GDP Scenario Simulator")
 
 # ───────── prompt & run
-prompt = st.text_area("Describe the policy you want to test:",
-                      value=st.session_state.get("prompt",""),
-                      height=110,
-                      placeholder="e.g. ICT workforce doubles in Riyadh by 2030")
-run_btn = st.button("🚀 Run Scenario", use_container_width=True,
-                    disabled=not prompt.strip())
+# Use a form to prevent accidental re-runs with old input
+with st.form(key="scenario_form"):
+    prompt = st.text_area(
+        "Describe the policy you want to test:",
+        value="",  # Clear on each page load
+        height=110,
+        placeholder="e.g. ICT workforce doubles in Riyadh by 2030",
+        key="prompt_input"
+    )
+    
+    # Submit button inside the form
+    run_btn = st.form_submit_button(
+        "🚀 Run Scenario", 
+        use_container_width=True,
+        type="primary"  # Make the button more prominent
+    )
 
 # ═════ run model once ═════
 if run_btn:
-    # Store prompt in session state
-    st.session_state["prompt"] = prompt
-
-    # Clear previous results if any
-    if "payload" in st.session_state:
-         del st.session_state["payload"]
+    # Only store and use prompt when the form is submitted
+    if prompt.strip():  # Check if prompt is not empty
+        st.session_state["prompt"] = prompt
+        
+        # Clear previous results if any
+        if "payload" in st.session_state:
+            del st.session_state["payload"]
 
     # Remove old output files before generating new ones (optional but good practice)
     for path in CSV_FILES.values():
@@ -235,6 +264,181 @@ if "payload" in st.session_state:
                     df["Δ SAR"] = df["GDP_SAR_scenario"] - df["GDP_SAR_baseline"]
                     df["Δ %"] = 100*df["Δ SAR"] / df["GDP_SAR_baseline"].replace(0, np.nan) # Use np.nan for proper NA handling
                     df["Region"] = df["regioncode"].map(REGION_MAP).fillna(df["regioncode"])
+                    
+                    # Create map dataframe with coordinates
+                    map_df = pd.DataFrame()
+                    for idx, row in df.iterrows():
+                        region_code = row["regioncode"]
+                        if region_code in REGION_COORDINATES:
+                            map_df = pd.concat([map_df, pd.DataFrame({
+                                "lat": [REGION_COORDINATES[region_code]["lat"]],
+                                "lon": [REGION_COORDINATES[region_code]["lon"]],
+                                "Region": [row["Region"] if row["Region"] else region_code],
+                                "regioncode": [region_code],
+                                "Δ SAR": [row["Δ SAR"]],
+                                "Δ %": [row["Δ %"]],
+                                "GDP_SAR_baseline": [row["GDP_SAR_baseline"]],
+                                "GDP_SAR_scenario": [row["GDP_SAR_scenario"]]
+                            })], ignore_index=True)
+                    
+                    if not map_df.empty:
+                        st.write("### Regional GDP Impact Map (2030)")
+                        
+                        # Normalize data for color intensity
+                        max_abs_delta = map_df["Δ SAR"].abs().max()
+                        if max_abs_delta > 0:
+                            map_df["color_intensity"] = map_df["Δ SAR"] / max_abs_delta
+                            
+                            # Prepare data for PyDeck
+                            map_df = map_df.copy()
+                            # Rename columns for PyDeck
+                            map_df.rename(columns={"lat": "latitude", "lon": "longitude"}, inplace=True)
+                            
+                            # Format numbers for tooltip
+                            map_df["Baseline_GDP"] = map_df["GDP_SAR_baseline"].apply(lambda x: f"{x:,.0f} SAR")
+                            map_df["Scenario_GDP"] = map_df["GDP_SAR_scenario"].apply(lambda x: f"{x:,.0f} SAR")
+                            map_df["GDP_Change"] = map_df["Δ SAR"].apply(lambda x: f"{x:,.0f} SAR")
+                            map_df["Percent_Change"] = map_df["Δ %"].apply(lambda x: f"{x:+.2f}%" if not pd.isna(x) else "N/A")
+                            
+                            # Calculate radius for visualization (scaled by GDP impact)
+                            radius_scale = 5000  # Adjust this value as needed
+                            min_radius = 3000   # Minimum radius in meters
+                            
+                            # Create a function to get the RGB color based on change direction
+                            def get_color_rgb(row):
+                                if pd.isna(row["Δ SAR"]) or row["Δ SAR"] == 0:
+                                    return [128, 128, 128]  # Gray for no change
+                                elif row["Δ SAR"] > 0:
+                                    # Green gradient for positive
+                                    intensity = min(abs(row["color_intensity"]), 1.0)
+                                    return [0, int(255 * intensity), 0]
+                                else:
+                                    # Red gradient for negative
+                                    intensity = min(abs(row["color_intensity"]), 1.0)
+                                    return [int(255 * intensity), 0, 0]
+                            
+                            # Apply the color function
+                            map_df["color_rgb"] = map_df.apply(get_color_rgb, axis=1)
+                            
+                            # Calculate scaling for the radius
+                            if max_abs_delta > 0:
+                                # Enhancing the scaling to make differences more visible
+                                # Apply a stronger scaling factor for better visibility
+                                map_df["radius"] = (map_df["Δ SAR"].abs() / max_abs_delta) ** 0.5 * radius_scale * 5 + min_radius
+                                
+                                # Create a more pronounced elevation value for 3D visualization
+                                map_df["elevation"] = (map_df["Δ SAR"].abs() / max_abs_delta) ** 0.5 * 500000
+                            else:
+                                map_df["radius"] = min_radius
+                                map_df["elevation"] = 10000  # Default elevation
+                            
+                            # Create PyDeck visualization
+                            # Column-layer for 3D columns showing GDP impact
+                            column_layer = pdk.Layer(
+                                "ColumnLayer",
+                                data=map_df,
+                                get_position=["longitude", "latitude"],
+                                get_elevation="elevation",  # Use our dedicated elevation field
+                                elevation_scale=1,  # Scale is applied in our field calculation
+                                radius=50000,  # Much larger radius (over 16x increase)
+                                get_fill_color="color_rgb",
+                                pickable=True,
+                                auto_highlight=True,
+                                opacity=0.8,
+                                id="columns",
+                            )
+                            
+                            # Scatterplot layer for points
+                            scatter_layer = pdk.Layer(
+                                "ScatterplotLayer",
+                                data=map_df,
+                                get_position=["longitude", "latitude"],
+                                get_radius="radius * 1.5",  # Larger scatter points
+                                get_fill_color="color_rgb",
+                                get_line_color=[255, 255, 255],
+                                line_width_min_pixels=2,  # Thicker border
+                                pickable=True,
+                                opacity=0.8,
+                                stroked=True,
+                                id="scatter",
+                            )
+                            
+                            # # Text layer to show region names
+                            # text_layer = pdk.Layer(
+                            #     "TextLayer",
+                            #     data=map_df,
+                            #     get_position=["longitude", "latitude"],
+                            #     get_text="Region",
+                            #     get_size=20,  # Larger text
+                            #     get_color=[255, 255, 255],
+                            #     get_angle=0,
+                            #     text_anchor="middle",
+                            #     text_baseline="bottom",  # Changed to bottom so text appears above columns
+                            #     get_offset=[0, -20000],  # Offset text to appear above columns
+                            #     pickable=True,
+                            #     opacity=1.0,
+                            #     id="text",
+                            # )
+                            
+                            # Define the tooltip
+                            tooltip = {
+                                "html": "<div style='background-color: rgba(42, 42, 42, 0.95); color: white; "
+                                        "padding: 10px; border-radius: 5px; font-family: Arial;'>"
+                                        "<b style='font-size: 16px;'>{Region}</b><br/>"
+                                        "<hr style='margin: 5px 0; border-color: #666;'/>"
+                                        "<b>GDP Change:</b> {GDP_Change}<br/>"
+                                        "<b>Percentage Change:</b> {Percent_Change}<br/>"
+                                        "<b>Baseline GDP:</b> {Baseline_GDP}<br/>"
+                                        "<b>Scenario GDP:</b> {Scenario_GDP}"
+                                        "</div>",
+                                "style": {
+                                    "backgroundColor": "transparent",
+                                    "color": "white"
+                                }
+                            }
+                            
+                            # Center map on Saudi Arabia with better view settings
+                            view_state = pdk.ViewState(
+                                latitude=24.0,
+                                longitude=45.0,
+                                zoom=4,  # Slightly zoomed out
+                                pitch=50,  # More tilt for better 3D effect
+                                bearing=0
+                            )
+                            
+                            
+                            # Create the PyDeck map with optimized layers order
+                            deck = pdk.Deck(
+                               # layers=[column_layer, scatter_layer, text_layer],
+                                layers=[column_layer, scatter_layer],
+                                initial_view_state=view_state,
+                                tooltip=tooltip,
+                                map_style="mapbox://styles/mapbox/dark-v10",  # Use a dark map style
+                                api_keys={"mapbox": None},  # Let Streamlit provide the token
+                            )
+                            
+                            # Display the PyDeck chart
+                            st.pydeck_chart(
+                                deck,
+                                use_container_width=True,
+                                height=700,  # Taller map for better visualization of 3D elements
+                            )
+                            
+                            # Add legend with a better format
+                            col1, col2, col3 = st.columns(3)
+                            with col1:
+                                st.markdown("<div style='background-color: rgba(255,0,0,0.2); padding: 10px; border-radius: 5px; text-align: center;'>"
+                                           "<span style='color: #ff0000;'>🔴</span> GDP Decrease</div>", unsafe_allow_html=True)
+                            with col2:
+                                st.markdown("<div style='background-color: rgba(0,255,0,0.2); padding: 10px; border-radius: 5px; text-align: center;'>"
+                                           "<span style='color: #00ff00;'>🟢</span> GDP Increase</div>", unsafe_allow_html=True)
+                            with col3:
+                                st.markdown("<div style='background-color: rgba(128,128,128,0.2); padding: 10px; border-radius: 5px; text-align: center;'>"
+                                           "<span style='color: #808080;'>⚫</span> No Change</div>", unsafe_allow_html=True)
+                            
+                            # Add information about visualization
+                            st.markdown("<div style='margin-top: 10px; font-style: italic; text-align: center;'>"
+                                       "Column height and circle size indicate magnitude of GDP change</div>", unsafe_allow_html=True)
 
                     # decide split logic
                     gains = df[df["Δ SAR"]>0].sort_values("Δ SAR", ascending=False)

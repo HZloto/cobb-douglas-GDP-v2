@@ -1,32 +1,136 @@
 {
-  "prompt": "general workforce is reduced by 30% by 2030 due to AI but productivity is 10% higher.",
+  "prompt": "makkah productivty doubles, riyadh divideb by two",
   "agent_output": {
-    "reasoning": "The policy directly impacts the workforce and productivity across all sectors due to the broad nature of AI implementation. A negative impact on workforce is observed, with a positive impact in productivity. Workforce reduction of 30% by 2030 is implemented gradually. Gradual increase in productivity is assumed with the adoption of AI with an overall impact of 10%.",
+    "reasoning": "This policy directly impacts productivity in two specific regions, Makkah and Riyadh.  Therefore, I'm creating separate rules for each. The sector is set to 'all' as the prompt doesn't explicitly mention any specific sector. I use positive sign for Makkah and negative for Riyadh. The spillover effect is applied based on the region_from, region_to, and spillover_pct rules provided, assuming that productivity changes in one region will affect the surrounding regions to some extent. Each regions sectors interact with each other, meaning a decrease in productivity in riyadh will spread to the manufacturing and transport sectors, similarly to an increase in mekkah",
     "rules": [
       {
-        "region": "all",
-        "sector": "all",
-        "kpi": "Workforce",
-        "years": {
-          "2025": -5,
-          "2026": -5,
-          "2027": -5,
-          "2028": -5,
-          "2029": -5,
-          "2030": -5
-        }
-      },
-      {
-        "region": "all",
+        "region": "MAK",
         "sector": "all",
         "kpi": "Productivity",
         "years": {
-          "2025": 1.67,
-          "2026": 1.67,
-          "2027": 1.67,
-          "2028": 1.67,
-          "2029": 1.67,
-          "2030": 1.67
+          "2025": 100.0,
+          "2026": 100.0,
+          "2027": 100.0,
+          "2028": 100.0,
+          "2029": 100.0,
+          "2030": 100.0
+        }
+      },
+      {
+        "region": "ARI",
+        "sector": "all",
+        "kpi": "Productivity",
+        "years": {
+          "2025": -50.0,
+          "2026": -50.0,
+          "2027": -50.0,
+          "2028": -50.0,
+          "2029": -50.0,
+          "2030": -50.0
+        }
+      },
+      {
+        "region": "ABA",
+        "sector": "all",
+        "kpi": "Productivity",
+        "years": {
+          "2025": 25.0,
+          "2026": 25.0,
+          "2027": 25.0,
+          "2028": 25.0,
+          "2029": 25.0,
+          "2030": 25.0
+        }
+      },
+      {
+        "region": "AMA",
+        "sector": "all",
+        "kpi": "Productivity",
+        "years": {
+          "2025": 25.0,
+          "2026": 25.0,
+          "2027": 25.0,
+          "2028": 25.0,
+          "2029": 25.0,
+          "2030": 25.0
+        }
+      },
+      {
+        "region": "ASI",
+        "sector": "all",
+        "kpi": "Productivity",
+        "years": {
+          "2025": -12.5,
+          "2026": -12.5,
+          "2027": -12.5,
+          "2028": -12.5,
+          "2029": -12.5,
+          "2030": -12.5
+        }
+      },
+      {
+        "region": "AQA",
+        "sector": "all",
+        "kpi": "Productivity",
+        "years": {
+          "2025": -12.5,
+          "2026": -12.5,
+          "2027": -12.5,
+          "2028": -12.5,
+          "2029": -12.5,
+          "2030": -12.5
+        }
+      },
+      {
+        "region": "ASH",
+        "sector": "all",
+        "kpi": "Productivity",
+        "years": {
+          "2025": -12.5,
+          "2026": -12.5,
+          "2027": -12.5,
+          "2028": -12.5,
+          "2029": -12.5,
+          "2030": -12.5
+        }
+      },
+      {
+        "region": "HAI",
+        "sector": "all",
+        "kpi": "Productivity",
+        "years": {
+          "2025": -12.5,
+          "2026": -12.5,
+          "2027": -12.5,
+          "2028": -12.5,
+          "2029": -12.5,
+          "2030": -12.5
+        }
+      },
+      {
+        "region": "NAJ",
+        "sector": "all",
+        "kpi": "Productivity",
+        "years": {
+          "2025": -12.5,
+          "2026": -12.5,
+          "2027": -12.5,
+          "2028": -12.5,
+          "2029": -12.5,
+          "2030": -12.5
+        }
+      },
+      {
+        "region": "TAB",
+        "sector": "all",
+        "kpi": "Productivity",
+        "years": {
+          "2025": 25.0,
+          "2026": 25.0,
+          "2027": 25.0,
+          "2028": 25.0,
+          "2029": 25.0,
+          "2030": 25.0
         }
       }
     ]
