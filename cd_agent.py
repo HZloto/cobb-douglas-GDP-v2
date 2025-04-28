@@ -168,7 +168,7 @@ Return the JSON **only**.  No markdown, no prose outside `reasoning`.
 """
 
     generate_content_config = types.GenerateContentConfig(
-        temperature=0.1,
+        temperature=0.01,
         thinking_config=types.ThinkingConfig(),
         response_mime_type="application/json",
         response_schema=genai.types.Schema(
